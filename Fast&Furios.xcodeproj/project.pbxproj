@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CD143B8F2627A9F200F4379C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143B8E2627A9F200F4379C /* AppDelegate.swift */; };
+		CD143B912627A9F200F4379C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143B902627A9F200F4379C /* SceneDelegate.swift */; };
+		CD143B932627A9F200F4379C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143B922627A9F200F4379C /* ViewController.swift */; };
+		CD143B962627A9F200F4379C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD143B942627A9F200F4379C /* Main.storyboard */; };
+		CD143B992627A9F200F4379C /* Fast_Furios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD143B972627A9F200F4379C /* Fast_Furios.xcdatamodeld */; };
+		CD143B9B2627A9F200F4379C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD143B9A2627A9F200F4379C /* Assets.xcassets */; };
+		CD143B9E2627A9F200F4379C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD143B9C2627A9F200F4379C /* LaunchScreen.storyboard */; };
+		CD143BA92627A9F200F4379C /* Fast_FuriosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143BA82627A9F200F4379C /* Fast_FuriosTests.swift */; };
+		CD143BB42627A9F200F4379C /* Fast_FuriosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143BB32627A9F200F4379C /* Fast_FuriosUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD143BA52627A9F200F4379C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD143B832627A9F200F4379C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD143B8A2627A9F200F4379C;
+			remoteInfo = "Fast&Furios";
+		};
+		CD143BB02627A9F200F4379C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CD143B832627A9F200F4379C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD143B8A2627A9F200F4379C;
+			remoteInfo = "Fast&Furios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CD143B8B2627A9F200F4379C /* Fast&Furios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fast&Furios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD143B8E2627A9F200F4379C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CD143B902627A9F200F4379C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CD143B922627A9F200F4379C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD143B952627A9F200F4379C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CD143B982627A9F200F4379C /* Fast_Furios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fast_Furios.xcdatamodel; sourceTree = "<group>"; };
+		CD143B9A2627A9F200F4379C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD143B9D2627A9F200F4379C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CD143B9F2627A9F200F4379C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD143BA42627A9F200F4379C /* Fast&FuriosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fast&FuriosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD143BA82627A9F200F4379C /* Fast_FuriosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fast_FuriosTests.swift; sourceTree = "<group>"; };
+		CD143BAA2627A9F200F4379C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD143BAF2627A9F200F4379C /* Fast&FuriosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fast&FuriosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD143BB32627A9F200F4379C /* Fast_FuriosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fast_FuriosUITests.swift; sourceTree = "<group>"; };
+		CD143BB52627A9F200F4379C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CD143B882627A9F200F4379C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD143BA12627A9F200F4379C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD143BAC2627A9F200F4379C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CD143B822627A9F200F4379C = {
+			isa = PBXGroup;
+			children = (
+				CD143B8D2627A9F200F4379C /* Fast&Furios */,
+				CD143BA72627A9F200F4379C /* Fast&FuriosTests */,
+				CD143BB22627A9F200F4379C /* Fast&FuriosUITests */,
+				CD143B8C2627A9F200F4379C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CD143B8C2627A9F200F4379C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CD143B8B2627A9F200F4379C /* Fast&Furios.app */,
+				CD143BA42627A9F200F4379C /* Fast&FuriosTests.xctest */,
+				CD143BAF2627A9F200F4379C /* Fast&FuriosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CD143B8D2627A9F200F4379C /* Fast&Furios */ = {
+			isa = PBXGroup;
+			children = (
+				CD143B8E2627A9F200F4379C /* AppDelegate.swift */,
+				CD143B902627A9F200F4379C /* SceneDelegate.swift */,
+				CD143B922627A9F200F4379C /* ViewController.swift */,
+				CD143B942627A9F200F4379C /* Main.storyboard */,
+				CD143B9A2627A9F200F4379C /* Assets.xcassets */,
+				CD143B9C2627A9F200F4379C /* LaunchScreen.storyboard */,
+				CD143B9F2627A9F200F4379C /* Info.plist */,
+				CD143B972627A9F200F4379C /* Fast_Furios.xcdatamodeld */,
+			);
+			path = "Fast&Furios";
+			sourceTree = "<group>";
+		};
+		CD143BA72627A9F200F4379C /* Fast&FuriosTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD143BA82627A9F200F4379C /* Fast_FuriosTests.swift */,
+				CD143BAA2627A9F200F4379C /* Info.plist */,
+			);
+			path = "Fast&FuriosTests";
+			sourceTree = "<group>";
+		};
+		CD143BB22627A9F200F4379C /* Fast&FuriosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CD143BB32627A9F200F4379C /* Fast_FuriosUITests.swift */,
+				CD143BB52627A9F200F4379C /* Info.plist */,
+			);
+			path = "Fast&FuriosUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CD143B8A2627A9F200F4379C /* Fast&Furios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD143BB82627A9F200F4379C /* Build configuration list for PBXNativeTarget "Fast&Furios" */;
+			buildPhases = (
+				CD143B872627A9F200F4379C /* Sources */,
+				CD143B882627A9F200F4379C /* Frameworks */,
+				CD143B892627A9F200F4379C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fast&Furios";
+			productName = "Fast&Furios";
+			productReference = CD143B8B2627A9F200F4379C /* Fast&Furios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD143BA32627A9F200F4379C /* Fast&FuriosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD143BBB2627A9F200F4379C /* Build configuration list for PBXNativeTarget "Fast&FuriosTests" */;
+			buildPhases = (
+				CD143BA02627A9F200F4379C /* Sources */,
+				CD143BA12627A9F200F4379C /* Frameworks */,
+				CD143BA22627A9F200F4379C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD143BA62627A9F200F4379C /* PBXTargetDependency */,
+			);
+			name = "Fast&FuriosTests";
+			productName = "Fast&FuriosTests";
+			productReference = CD143BA42627A9F200F4379C /* Fast&FuriosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CD143BAE2627A9F200F4379C /* Fast&FuriosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD143BBE2627A9F200F4379C /* Build configuration list for PBXNativeTarget "Fast&FuriosUITests" */;
+			buildPhases = (
+				CD143BAB2627A9F200F4379C /* Sources */,
+				CD143BAC2627A9F200F4379C /* Frameworks */,
+				CD143BAD2627A9F200F4379C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD143BB12627A9F200F4379C /* PBXTargetDependency */,
+			);
+			name = "Fast&FuriosUITests";
+			productName = "Fast&FuriosUITests";
+			productReference = CD143BAF2627A9F200F4379C /* Fast&FuriosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CD143B832627A9F200F4379C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					CD143B8A2627A9F200F4379C = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					CD143BA32627A9F200F4379C = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = CD143B8A2627A9F200F4379C;
+					};
+					CD143BAE2627A9F200F4379C = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = CD143B8A2627A9F200F4379C;
+					};
+				};
+			};
+			buildConfigurationList = CD143B862627A9F200F4379C /* Build configuration list for PBXProject "Fast&Furios" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CD143B822627A9F200F4379C;
+			productRefGroup = CD143B8C2627A9F200F4379C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CD143B8A2627A9F200F4379C /* Fast&Furios */,
+				CD143BA32627A9F200F4379C /* Fast&FuriosTests */,
+				CD143BAE2627A9F200F4379C /* Fast&FuriosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CD143B892627A9F200F4379C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD143B9E2627A9F200F4379C /* LaunchScreen.storyboard in Resources */,
+				CD143B9B2627A9F200F4379C /* Assets.xcassets in Resources */,
+				CD143B962627A9F200F4379C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD143BA22627A9F200F4379C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD143BAD2627A9F200F4379C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CD143B872627A9F200F4379C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD143B932627A9F200F4379C /* ViewController.swift in Sources */,
+				CD143B992627A9F200F4379C /* Fast_Furios.xcdatamodeld in Sources */,
+				CD143B8F2627A9F200F4379C /* AppDelegate.swift in Sources */,
+				CD143B912627A9F200F4379C /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD143BA02627A9F200F4379C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD143BA92627A9F200F4379C /* Fast_FuriosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD143BAB2627A9F200F4379C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD143BB42627A9F200F4379C /* Fast_FuriosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CD143BA62627A9F200F4379C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD143B8A2627A9F200F4379C /* Fast&Furios */;
+			targetProxy = CD143BA52627A9F200F4379C /* PBXContainerItemProxy */;
+		};
+		CD143BB12627A9F200F4379C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD143B8A2627A9F200F4379C /* Fast&Furios */;
+			targetProxy = CD143BB02627A9F200F4379C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CD143B942627A9F200F4379C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD143B952627A9F200F4379C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CD143B9C2627A9F200F4379C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD143B9D2627A9F200F4379C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CD143BB62627A9F200F4379C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CD143BB72627A9F200F4379C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CD143BB92627A9F200F4379C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Fast&Furios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fast-Furios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CD143BBA2627A9F200F4379C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Fast&Furios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fast-Furios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CD143BBC2627A9F200F4379C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Fast&FuriosTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fast-FuriosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fast&Furios.app/Fast&Furios";
+			};
+			name = Debug;
+		};
+		CD143BBD2627A9F200F4379C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Fast&FuriosTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fast-FuriosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fast&Furios.app/Fast&Furios";
+			};
+			name = Release;
+		};
+		CD143BBF2627A9F200F4379C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Fast&FuriosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fast-FuriosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fast&Furios";
+			};
+			name = Debug;
+		};
+		CD143BC02627A9F200F4379C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Fast&FuriosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Fast-FuriosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fast&Furios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CD143B862627A9F200F4379C /* Build configuration list for PBXProject "Fast&Furios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD143BB62627A9F200F4379C /* Debug */,
+				CD143BB72627A9F200F4379C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD143BB82627A9F200F4379C /* Build configuration list for PBXNativeTarget "Fast&Furios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD143BB92627A9F200F4379C /* Debug */,
+				CD143BBA2627A9F200F4379C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD143BBB2627A9F200F4379C /* Build configuration list for PBXNativeTarget "Fast&FuriosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD143BBC2627A9F200F4379C /* Debug */,
+				CD143BBD2627A9F200F4379C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD143BBE2627A9F200F4379C /* Build configuration list for PBXNativeTarget "Fast&FuriosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD143BBF2627A9F200F4379C /* Debug */,
+				CD143BC02627A9F200F4379C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CD143B972627A9F200F4379C /* Fast_Furios.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CD143B982627A9F200F4379C /* Fast_Furios.xcdatamodel */,
+			);
+			currentVersion = CD143B982627A9F200F4379C /* Fast_Furios.xcdatamodel */;
+			path = Fast_Furios.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CD143B832627A9F200F4379C /* Project object */;
+}
