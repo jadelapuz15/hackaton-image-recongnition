@@ -70,12 +70,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     private func processImage(image: UIImage?) {
-        
-        DispatchQueue.main.async {
-            self.loadingView.startAnimating()
-            self.imageView.image = image
-        }
-       
         // Get the CGImage on which to perform requests.
         guard let cgImage = image?.cgImage else { return }
         
@@ -93,10 +87,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 return observation.topCandidates(1).first?.string
             }
             
-            DispatchQueue.main.async {
-                self.loadingView.stopAnimating()
-            }
-            
             guard !recognizedStrings.isEmpty else {
                 let alert = UIAlertController(title: "Error", message: "No text was recognized on the image", preferredStyle: .alert)
                 
@@ -108,10 +98,30 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 return
             }
             
-            DispatchQueue.main.async {
-                self.label.text = recognizedStrings.joined(separator: "\n")
+            guard let result = recognizedStrings.first else {
+                return
+            }
+            
+            CarParser.shared.requestCarDetails(plateNumber: result, state: "NSW") { (car, error) in
+                
+                defer {
+                    DispatchQueue.main.async {
+                        self.loadingView.stopAnimating()
+                    }
+                }
+                
+                guard error == nil else {
+                    print(error?.localizedDescription)
+                    return
+                }
+                
+                if let car = car {
+                    self.label.text = car.description
+                }
             }
         }
+        
+        request.recognitionLevel = .accurate
         
         do {
             // Perform the text-recognition request.
@@ -120,19 +130,23 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             print("Unable to perform the requests: \(error).")
         }
     }
+    
 }
 
 extension ViewController: UIImagePickerControllerDelegate, VNDocumentCameraViewControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let pickedImage = info[.originalImage] as? UIImage else {
-           return
+            return
         }
         
-        imageView.image = pickedImage
-        picker.dismiss(animated: true, completion: {
+        DispatchQueue.main.async {
+            self.loadingView.startAnimating()
+            self.imageView.image = pickedImage
             self.processImage(image: pickedImage)
-        })
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
     }
     
     func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {

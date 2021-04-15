@@ -16,6 +16,7 @@
 		CD143B9E2627A9F200F4379C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD143B9C2627A9F200F4379C /* LaunchScreen.storyboard */; };
 		CD143BA92627A9F200F4379C /* Fast_FuriosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143BA82627A9F200F4379C /* Fast_FuriosTests.swift */; };
 		CD143BB42627A9F200F4379C /* Fast_FuriosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143BB32627A9F200F4379C /* Fast_FuriosUITests.swift */; };
+		CD143BD12627D0A300F4379C /* CarParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143BD02627D0A300F4379C /* CarParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		CD143BAF2627A9F200F4379C /* Fast&FuriosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fast&FuriosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD143BB32627A9F200F4379C /* Fast_FuriosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fast_FuriosUITests.swift; sourceTree = "<group>"; };
 		CD143BB52627A9F200F4379C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD143BD02627D0A300F4379C /* CarParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				CD143B9C2627A9F200F4379C /* LaunchScreen.storyboard */,
 				CD143B9F2627A9F200F4379C /* Info.plist */,
 				CD143B972627A9F200F4379C /* Fast_Furios.xcdatamodeld */,
+				CD143BD02627D0A300F4379C /* CarParser.swift */,
 			);
 			path = "Fast&Furios";
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD143B932627A9F200F4379C /* ViewController.swift in Sources */,
+				CD143BD12627D0A300F4379C /* CarParser.swift in Sources */,
 				CD143B992627A9F200F4379C /* Fast_Furios.xcdatamodeld in Sources */,
 				CD143B8F2627A9F200F4379C /* AppDelegate.swift in Sources */,
 				CD143B912627A9F200F4379C /* SceneDelegate.swift in Sources */,
