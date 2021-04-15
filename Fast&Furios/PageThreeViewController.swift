@@ -26,6 +26,10 @@ class PageThreeViewController: UIViewController {
         cb2.isChecked = true
     }
     
+    @IBAction func onNextClicked(_ sender: Any) {
+        self.performSegue(withIdentifier: "showPageFour", sender: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

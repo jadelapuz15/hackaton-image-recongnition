@@ -1,5 +1,5 @@
 //
-//  PageOnViewController.swift
+//  PageFourViewController.swift
 //  Fast&Furios
 //
 //  Created by Aldwin David on 4/15/21.
@@ -7,61 +7,45 @@
 
 import UIKit
 
-class PageOneViewController: UIViewController {
+class PageFourViewController: UIViewController {
     @IBOutlet weak var cb1: CheckBox!
     @IBOutlet weak var cb2: CheckBox!
     @IBOutlet weak var cb3: CheckBox!
     @IBOutlet weak var cb4: CheckBox!
-    @IBOutlet weak var cb5: CheckBox!
-    
     @IBAction func onCb1Checked(_ sender: Any) {
         cb1.isChecked = true
         cb2.isChecked = false
         cb3.isChecked = false
         cb4.isChecked = false
-        cb5.isChecked = false
     }
     @IBAction func onCb2Checked(_ sender: Any) {
         cb1.isChecked = false
         cb2.isChecked = true
         cb3.isChecked = false
         cb4.isChecked = false
-        cb5.isChecked = false
     }
     @IBAction func onCb3Checked(_ sender: Any) {
         cb1.isChecked = false
         cb2.isChecked = false
         cb3.isChecked = true
         cb4.isChecked = false
-        cb5.isChecked = false
     }
     @IBAction func onCb4Checked(_ sender: Any) {
         cb1.isChecked = false
         cb2.isChecked = false
         cb3.isChecked = false
         cb4.isChecked = true
-        cb5.isChecked = false
     }
-    @IBAction func onCb5Checked(_ sender: Any) {
-        cb1.isChecked = false
-        cb2.isChecked = false
-        cb3.isChecked = false
-        cb4.isChecked = false
-        cb5.isChecked = true
-    }
+    
     @IBAction func onNextClicked(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "showStateView", sender: nil)
+            self.performSegue(withIdentifier: "showPageFive", sender: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        cb1.style = .tick
-        cb2.style = .tick
-        cb3.style = .tick
-        cb4.style = .tick
-        cb5.style = .tick
-
+        cb1.borderStyle = .rounded
+        cb2.borderStyle = .rounded
+        cb3.borderStyle = .rounded
+        cb4.borderStyle = .rounded
         // Do any additional setup after loading the view.
     }
     

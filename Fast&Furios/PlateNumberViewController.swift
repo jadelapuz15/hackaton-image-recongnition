@@ -74,7 +74,6 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
     }
     
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
-    @IBOutlet weak var selectTextField: UITextField!
     
     @IBOutlet weak var backButton: UIButton! {
         didSet {
@@ -88,13 +87,13 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
     }
     
     private var imagePicker: UIImagePickerController!
-    private let states: [String: String] = ["New South Wales": "NSW", "Northern Territory": "NT", "Queensland": "QLD", "South Australia": "SA", "Tasmania": "TAS", "Victoria": "VIC", "Western Australia": "WA"]
     
     private var car: CarModel!
     
+    var selectedState: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectTextField.delegate = self
         licensePlateTextField.addTarget(self, action: #selector(PlateNumberViewController.textFieldDidChange(_:)), for: .editingChanged)
     }
     
@@ -135,7 +134,10 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
             imagePicker.delegate = self
             imagePicker.allowsEditing = true
             imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary
-            self.present(imagePicker, animated: true, completion: nil)
+            
+            DispatchQueue.main.async {
+                self.present(imagePicker, animated: true, completion: nil)
+            }
         }
         else
         {
@@ -146,13 +148,9 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
     }
     
     private func processImage(image: UIImage?) {
-        DispatchQueue.main.async {
-            self.loadingView.startAnimating()
-        }
         
         // Get the CGImage on which to perform requests.
         guard let cgImage = image?.cgImage else {
-            self.loadingView.stopAnimating()
             return
         }
         
@@ -163,9 +161,6 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
         let request = VNRecognizeTextRequest { (request, error) in
             guard let observations =
                     request.results as? [VNRecognizedTextObservation] else {
-                DispatchQueue.main.async {
-                    self.loadingView.stopAnimating()
-                }
                 return
             }
             
@@ -181,24 +176,19 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
                 }))
                 
                 self.present(alert, animated: true, completion: nil)
-                DispatchQueue.main.async {
-                    self.loadingView.stopAnimating()
-                }
                 return
             }
             
             guard let result = recognizedStrings.first else {
-                DispatchQueue.main.async {
-                    self.loadingView.stopAnimating()
-                }
                 return
             }
             
             DispatchQueue.main.async {
                 self.licensePlateTextField.text = result
-                self.loadingView.stopAnimating()
+                self.getCarDetails(result: result)
             }
         }
+        
         
         request.recognitionLevel = .accurate
         
@@ -237,42 +227,26 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
     }
     
     @objc func doneButtonAction(){
-        licensePlateTextField.resignFirstResponder()
-    }
-    
-    private func showActionSheet() {
-        let actionSheet = UIAlertController(title: "", message: "Please select a state", preferredStyle: .actionSheet)
-        
-        for (key, value) in states {
-            actionSheet.addAction(UIAlertAction(title: key, style: .default, handler: { (action) in
-                self.selectTextField.text = value
-                guard let license = self.licensePlateTextField.text, !license.isEmpty else {
-                    return
-                }
-                
-                self.getCarDetails()
-                self.nextButton(shouldEnable: true)
-            }))
-        }
-        
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
-        
-        self.present(actionSheet, animated: true, completion: nil)
-    }
-    
-    private func getCarDetails() {
-        self.loadingView.startAnimating()
-        
-        guard let license = licensePlateTextField.text, let state = selectTextField.text else {
-            let error = UIAlertController(title: "Wait!", message: "Please fill all fields", preferredStyle: .alert)
+        guard let text = licensePlateTextField.text, !text.isEmpty else {
+            let error = UIAlertController(title: "Oops!", message: "Plate number is empty", preferredStyle: .alert)
             
             error.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             
-            self.present(error, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.present(error, animated: true, completion: nil)
+            }
             return
         }
         
-        CarParser.shared.requestCarDetails(plateNumber: license, state: state) { (car, error) in
+        licensePlateTextField.resignFirstResponder()
+        self.getCarDetails(result: text)
+    }
+    
+    
+    private func getCarDetails(result: String) {
+        self.loadingView.startAnimating()
+        
+        CarParser.shared.requestCarDetails(plateNumber: result, state: selectedState) { (car, error) in
             defer {
                 DispatchQueue.main.async {
                     self.loadingView.stopAnimating()
@@ -301,6 +275,7 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
             
             self.car = carModel
             self.showCarDetails(carModel: carModel)
+            self.nextButton(shouldEnable: true)
         }
     }
     
@@ -312,26 +287,21 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
         engineLabel.text = carModel.engine
         yearLabel.text = carModel.extended?.year
         transmissionLabel.text = carModel.extended?.transmissionType
-//        imageView.kf.setImage(
-//            with: URL(string: carModel.imageUrl ?? "")!,
-//            placeholder: UIImage(named: "placeholder-image"),
-//            options: [],
-//            progressBlock: { receivedSize, totalSize in
-//                // Progress updated
-//            },
-//            completionHandler: { result in
-//                // Done
-//            }
-//        )
+        imageView.kf.setImage(
+            with: URL(string: carModel.imageUrl ?? "")!,
+            placeholder: UIImage(named: "placeholder-image"),
+            options: [],
+            progressBlock: { receivedSize, totalSize in
+                // Progress updated
+            },
+            completionHandler: { result in
+                // Done
+            }
+        )
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        guard let license = textField.text, let state = selectTextField.text, !license.isEmpty, !state.isEmpty else {
-            nextButton(shouldEnable: false)
-            return
-        }
-        
-        nextButton(shouldEnable: true)
+
     }
     
     @IBAction func backTapped(_ sender: Any) {
@@ -339,21 +309,6 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
     
     @IBAction func nextTapped(_ sender: UIButton) {
         self.performSegue(withIdentifier: "showMechanic", sender: nil)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showMechanic" {
-            if let destination = segue.destination as? PageThreeViewController {
-//                destination.car = self.car
-            }
-        }
-    }
-}
-
-extension PlateNumberViewController: UITextFieldDelegate {
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        showActionSheet()
-        return false
     }
 }
 
@@ -375,10 +330,8 @@ extension PlateNumberViewController: UIImagePickerControllerDelegate, VNDocument
     func documentCameraViewController(_ controller: VNDocumentCameraViewController, didFinishWith scan: VNDocumentCameraScan) {
         controller.dismiss(animated: true) {
             DispatchQueue.global(qos: .userInitiated).async {
-                for pageNumber in 0 ..< scan.pageCount {
-                    let image = scan.imageOfPage(at: pageNumber)
-                    self.processImage(image: image)
-                }
+                let image = scan.imageOfPage(at: scan.pageCount - 1)
+                self.processImage(image: image)
             }
         }
     }

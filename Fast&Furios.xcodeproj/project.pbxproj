@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1111288D60DF72DAF509D587 /* Pods_Fast_Furios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70766D5D46F3B988DE37F7ED /* Pods_Fast_Furios.framework */; };
 		240B40F92627CE4E007A58B8 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240B40F82627CE4E007A58B8 /* DataViewController.swift */; };
+		24AFE9BA26280788004AA97C /* PageFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFE9B926280788004AA97C /* PageFourViewController.swift */; };
+		24AFE9BF262815B2004AA97C /* PageFiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFE9BE262815B2004AA97C /* PageFiveViewController.swift */; };
+		24AFE9C4262815C2004AA97C /* PageSixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFE9C3262815C2004AA97C /* PageSixViewController.swift */; };
+		24AFE9C926281ECE004AA97C /* VehicleStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24AFE9C826281ECE004AA97C /* VehicleStateViewController.swift */; };
 		24C357022627D40100C9EE99 /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C357012627D40100C9EE99 /* CustomPageViewController.swift */; };
 		24C357072627DCB500C9EE99 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C357062627DCB500C9EE99 /* CheckBox.swift */; };
 		24C357102627E3CD00C9EE99 /* PageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C3570F2627E3CD00C9EE99 /* PageOneViewController.swift */; };
@@ -48,6 +52,10 @@
 /* Begin PBXFileReference section */
 		0B687898237B03FCCD64FEEB /* Pods-Fast&Furios-Fast&FuriosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast&Furios-Fast&FuriosUITests.release.xcconfig"; path = "Target Support Files/Pods-Fast&Furios-Fast&FuriosUITests/Pods-Fast&Furios-Fast&FuriosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		240B40F82627CE4E007A58B8 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		24AFE9B926280788004AA97C /* PageFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageFourViewController.swift; sourceTree = "<group>"; };
+		24AFE9BE262815B2004AA97C /* PageFiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageFiveViewController.swift; sourceTree = "<group>"; };
+		24AFE9C3262815C2004AA97C /* PageSixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageSixViewController.swift; sourceTree = "<group>"; };
+		24AFE9C826281ECE004AA97C /* VehicleStateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleStateViewController.swift; sourceTree = "<group>"; };
 		24C357012627D40100C9EE99 /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
 		24C357062627DCB500C9EE99 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		24C3570F2627E3CD00C9EE99 /* PageOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOneViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +169,10 @@
 				24C357062627DCB500C9EE99 /* CheckBox.swift */,
 				24C3570F2627E3CD00C9EE99 /* PageOneViewController.swift */,
 				24C357172627F93900C9EE99 /* PageThreeViewController.swift */,
+				24AFE9B926280788004AA97C /* PageFourViewController.swift */,
+				24AFE9BE262815B2004AA97C /* PageFiveViewController.swift */,
+				24AFE9C3262815C2004AA97C /* PageSixViewController.swift */,
+				24AFE9C826281ECE004AA97C /* VehicleStateViewController.swift */,
 			);
 			path = "Fast&Furios";
 			sourceTree = "<group>";
@@ -439,15 +451,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24AFE9C926281ECE004AA97C /* VehicleStateViewController.swift in Sources */,
 				CD143B932627A9F200F4379C /* PlateNumberViewController.swift in Sources */,
 				CD143BD12627D0A300F4379C /* CarParser.swift in Sources */,
+				24AFE9C4262815C2004AA97C /* PageSixViewController.swift in Sources */,
 				CD143B992627A9F200F4379C /* Fast_Furios.xcdatamodeld in Sources */,
 				24C357022627D40100C9EE99 /* CustomPageViewController.swift in Sources */,
+				24AFE9BA26280788004AA97C /* PageFourViewController.swift in Sources */,
 				24C357072627DCB500C9EE99 /* CheckBox.swift in Sources */,
 				CD81CB4A26280A420023E107 /* CarModel.swift in Sources */,
 				24C357182627F93900C9EE99 /* PageThreeViewController.swift in Sources */,
 				240B40F92627CE4E007A58B8 /* DataViewController.swift in Sources */,
 				CD143B8F2627A9F200F4379C /* AppDelegate.swift in Sources */,
+				24AFE9BF262815B2004AA97C /* PageFiveViewController.swift in Sources */,
 				24C357102627E3CD00C9EE99 /* PageOneViewController.swift in Sources */,
 				CD143B912627A9F200F4379C /* SceneDelegate.swift in Sources */,
 			);

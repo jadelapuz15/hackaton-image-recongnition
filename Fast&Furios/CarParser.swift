@@ -35,6 +35,7 @@ class CarParser: NSObject {
             return
         }
         
+        print(url)
         let task = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data, error == nil else {
                 DispatchQueue.main.async {
