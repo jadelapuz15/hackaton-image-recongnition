@@ -1,0 +1,6 @@
+framework module Pods_Fast_Furios_Fast_FuriosUITests {
+  umbrella header "Pods-Fast&Furios-Fast&FuriosUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

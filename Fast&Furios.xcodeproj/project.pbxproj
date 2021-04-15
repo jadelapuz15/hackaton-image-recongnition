@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1111288D60DF72DAF509D587 /* Pods_Fast_Furios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70766D5D46F3B988DE37F7ED /* Pods_Fast_Furios.framework */; };
 		240B40F92627CE4E007A58B8 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240B40F82627CE4E007A58B8 /* DataViewController.swift */; };
 		24C357022627D40100C9EE99 /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C357012627D40100C9EE99 /* CustomPageViewController.swift */; };
 		24C357072627DCB500C9EE99 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C357062627DCB500C9EE99 /* CheckBox.swift */; };
 		24C357102627E3CD00C9EE99 /* PageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C3570F2627E3CD00C9EE99 /* PageOneViewController.swift */; };
 		24C357182627F93900C9EE99 /* PageThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C357172627F93900C9EE99 /* PageThreeViewController.swift */; };
+		89A279219FEF76CA0204A091 /* Pods_Fast_FuriosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4097BFE52C64AA60219BCAB /* Pods_Fast_FuriosTests.framework */; };
 		CD143B8F2627A9F200F4379C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143B8E2627A9F200F4379C /* AppDelegate.swift */; };
 		CD143B912627A9F200F4379C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143B902627A9F200F4379C /* SceneDelegate.swift */; };
 		CD143B932627A9F200F4379C /* PlateNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143B922627A9F200F4379C /* PlateNumberViewController.swift */; };
@@ -22,6 +24,8 @@
 		CD143BA92627A9F200F4379C /* Fast_FuriosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143BA82627A9F200F4379C /* Fast_FuriosTests.swift */; };
 		CD143BB42627A9F200F4379C /* Fast_FuriosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143BB32627A9F200F4379C /* Fast_FuriosUITests.swift */; };
 		CD143BD12627D0A300F4379C /* CarParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143BD02627D0A300F4379C /* CarParser.swift */; };
+		CD81CB4A26280A420023E107 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD81CB4926280A420023E107 /* CarModel.swift */; };
+		E5F595844CA9A084F29BFF65 /* Pods_Fast_Furios_Fast_FuriosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66460CB91D0A98FDD836C01 /* Pods_Fast_Furios_Fast_FuriosUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,11 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B687898237B03FCCD64FEEB /* Pods-Fast&Furios-Fast&FuriosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast&Furios-Fast&FuriosUITests.release.xcconfig"; path = "Target Support Files/Pods-Fast&Furios-Fast&FuriosUITests/Pods-Fast&Furios-Fast&FuriosUITests.release.xcconfig"; sourceTree = "<group>"; };
 		240B40F82627CE4E007A58B8 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		24C357012627D40100C9EE99 /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
 		24C357062627DCB500C9EE99 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		24C3570F2627E3CD00C9EE99 /* PageOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOneViewController.swift; sourceTree = "<group>"; };
 		24C357172627F93900C9EE99 /* PageThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageThreeViewController.swift; sourceTree = "<group>"; };
+		69E8338955E9B7A98E6C1F68 /* Pods-Fast&Furios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast&Furios.debug.xcconfig"; path = "Target Support Files/Pods-Fast&Furios/Pods-Fast&Furios.debug.xcconfig"; sourceTree = "<group>"; };
+		70766D5D46F3B988DE37F7ED /* Pods_Fast_Furios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fast_Furios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82C925472ECAE0DB2A071205 /* Pods-Fast&FuriosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast&FuriosTests.debug.xcconfig"; path = "Target Support Files/Pods-Fast&FuriosTests/Pods-Fast&FuriosTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C08BC61D543F45AB76BA5B2E /* Pods-Fast&Furios-Fast&FuriosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast&Furios-Fast&FuriosUITests.debug.xcconfig"; path = "Target Support Files/Pods-Fast&Furios-Fast&FuriosUITests/Pods-Fast&Furios-Fast&FuriosUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD143B8B2627A9F200F4379C /* Fast&Furios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fast&Furios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD143B8E2627A9F200F4379C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD143B902627A9F200F4379C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +72,11 @@
 		CD143BB32627A9F200F4379C /* Fast_FuriosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fast_FuriosUITests.swift; sourceTree = "<group>"; };
 		CD143BB52627A9F200F4379C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD143BD02627D0A300F4379C /* CarParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParser.swift; sourceTree = "<group>"; };
+		CD81CB4926280A420023E107 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
+		CE4503CF6867536195B02402 /* Pods-Fast&FuriosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast&FuriosTests.release.xcconfig"; path = "Target Support Files/Pods-Fast&FuriosTests/Pods-Fast&FuriosTests.release.xcconfig"; sourceTree = "<group>"; };
+		E66460CB91D0A98FDD836C01 /* Pods_Fast_Furios_Fast_FuriosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fast_Furios_Fast_FuriosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EAFBD676A502E7F126324ECC /* Pods-Fast&Furios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast&Furios.release.xcconfig"; path = "Target Support Files/Pods-Fast&Furios/Pods-Fast&Furios.release.xcconfig"; sourceTree = "<group>"; };
+		F4097BFE52C64AA60219BCAB /* Pods_Fast_FuriosTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fast_FuriosTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1111288D60DF72DAF509D587 /* Pods_Fast_Furios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89A279219FEF76CA0204A091 /* Pods_Fast_FuriosTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,12 +100,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5F595844CA9A084F29BFF65 /* Pods_Fast_Furios_Fast_FuriosUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55CA193EA9873D70E767D5FD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				69E8338955E9B7A98E6C1F68 /* Pods-Fast&Furios.debug.xcconfig */,
+				EAFBD676A502E7F126324ECC /* Pods-Fast&Furios.release.xcconfig */,
+				C08BC61D543F45AB76BA5B2E /* Pods-Fast&Furios-Fast&FuriosUITests.debug.xcconfig */,
+				0B687898237B03FCCD64FEEB /* Pods-Fast&Furios-Fast&FuriosUITests.release.xcconfig */,
+				82C925472ECAE0DB2A071205 /* Pods-Fast&FuriosTests.debug.xcconfig */,
+				CE4503CF6867536195B02402 /* Pods-Fast&FuriosTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CD143B822627A9F200F4379C = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +128,8 @@
 				CD143BA72627A9F200F4379C /* Fast&FuriosTests */,
 				CD143BB22627A9F200F4379C /* Fast&FuriosUITests */,
 				CD143B8C2627A9F200F4379C /* Products */,
+				55CA193EA9873D70E767D5FD /* Pods */,
+				ECB7EA5B646C6AF9332ED538 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,6 +146,7 @@
 		CD143B8D2627A9F200F4379C /* Fast&Furios */ = {
 			isa = PBXGroup;
 			children = (
+				CD81CB4826280A350023E107 /* Model */,
 				CD143B8E2627A9F200F4379C /* AppDelegate.swift */,
 				CD143B902627A9F200F4379C /* SceneDelegate.swift */,
 				CD143B922627A9F200F4379C /* PlateNumberViewController.swift */,
@@ -149,6 +183,24 @@
 			path = "Fast&FuriosUITests";
 			sourceTree = "<group>";
 		};
+		CD81CB4826280A350023E107 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CD81CB4926280A420023E107 /* CarModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ECB7EA5B646C6AF9332ED538 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70766D5D46F3B988DE37F7ED /* Pods_Fast_Furios.framework */,
+				E66460CB91D0A98FDD836C01 /* Pods_Fast_Furios_Fast_FuriosUITests.framework */,
+				F4097BFE52C64AA60219BCAB /* Pods_Fast_FuriosTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,9 +208,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD143BB82627A9F200F4379C /* Build configuration list for PBXNativeTarget "Fast&Furios" */;
 			buildPhases = (
+				31A35468F3C35162E745D0CE /* [CP] Check Pods Manifest.lock */,
 				CD143B872627A9F200F4379C /* Sources */,
 				CD143B882627A9F200F4379C /* Frameworks */,
 				CD143B892627A9F200F4379C /* Resources */,
+				BFEA191E0CB9E8D90EAAB6B8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,6 +227,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD143BBB2627A9F200F4379C /* Build configuration list for PBXNativeTarget "Fast&FuriosTests" */;
 			buildPhases = (
+				69B08479647A3D8585D343DA /* [CP] Check Pods Manifest.lock */,
 				CD143BA02627A9F200F4379C /* Sources */,
 				CD143BA12627A9F200F4379C /* Frameworks */,
 				CD143BA22627A9F200F4379C /* Resources */,
@@ -191,9 +246,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CD143BBE2627A9F200F4379C /* Build configuration list for PBXNativeTarget "Fast&FuriosUITests" */;
 			buildPhases = (
+				39971A63D5890EDE5B17376E /* [CP] Check Pods Manifest.lock */,
 				CD143BAB2627A9F200F4379C /* Sources */,
 				CD143BAC2627A9F200F4379C /* Frameworks */,
 				CD143BAD2627A9F200F4379C /* Resources */,
+				7BEF91EFF9B1BF561066ACAC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,6 +331,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		31A35468F3C35162E745D0CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fast&Furios-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39971A63D5890EDE5B17376E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fast&Furios-Fast&FuriosUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69B08479647A3D8585D343DA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Fast&FuriosTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BEF91EFF9B1BF561066ACAC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fast&Furios-Fast&FuriosUITests/Pods-Fast&Furios-Fast&FuriosUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fast&Furios-Fast&FuriosUITests/Pods-Fast&Furios-Fast&FuriosUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fast&Furios-Fast&FuriosUITests/Pods-Fast&Furios-Fast&FuriosUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFEA191E0CB9E8D90EAAB6B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fast&Furios/Pods-Fast&Furios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Fast&Furios/Pods-Fast&Furios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Fast&Furios/Pods-Fast&Furios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CD143B872627A9F200F4379C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -284,6 +444,7 @@
 				CD143B992627A9F200F4379C /* Fast_Furios.xcdatamodeld in Sources */,
 				24C357022627D40100C9EE99 /* CustomPageViewController.swift in Sources */,
 				24C357072627DCB500C9EE99 /* CheckBox.swift in Sources */,
+				CD81CB4A26280A420023E107 /* CarModel.swift in Sources */,
 				24C357182627F93900C9EE99 /* PageThreeViewController.swift in Sources */,
 				240B40F92627CE4E007A58B8 /* DataViewController.swift in Sources */,
 				CD143B8F2627A9F200F4379C /* AppDelegate.swift in Sources */,
@@ -461,6 +622,7 @@
 		};
 		CD143BB92627A9F200F4379C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69E8338955E9B7A98E6C1F68 /* Pods-Fast&Furios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -480,6 +642,7 @@
 		};
 		CD143BBA2627A9F200F4379C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EAFBD676A502E7F126324ECC /* Pods-Fast&Furios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -499,6 +662,7 @@
 		};
 		CD143BBC2627A9F200F4379C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82C925472ECAE0DB2A071205 /* Pods-Fast&FuriosTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -520,6 +684,7 @@
 		};
 		CD143BBD2627A9F200F4379C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE4503CF6867536195B02402 /* Pods-Fast&FuriosTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -541,6 +706,7 @@
 		};
 		CD143BBF2627A9F200F4379C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C08BC61D543F45AB76BA5B2E /* Pods-Fast&Furios-Fast&FuriosUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -560,6 +726,7 @@
 		};
 		CD143BC02627A9F200F4379C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B687898237B03FCCD64FEEB /* Pods-Fast&Furios-Fast&FuriosUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

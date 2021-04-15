@@ -13,14 +13,14 @@ class Car {
     var carMake: String = ""
     var carModel: String = ""
     var bodyStyle: String = ""
+    var jsonString: String = ""
 }
 
 class CarParser: NSObject {
     
     static let shared = CarParser()
     
-    private let vehicleData = "vehicleData"
-    private let dictionaryKeys = ["Description", "RegistrationYear", "CarMake", "CarModel", "BodyStyle"]
+    private let dictionaryKeys = ["vehicleJson", "Description", "RegistrationYear", "CarMake", "CarModel", "BodyStyle"]
     private var car: Car!
     private var currentValue: String?
     
@@ -100,16 +100,18 @@ extension CarParser: XMLParserDelegate {
         if dictionaryKeys.contains(elementName) {
             
             switch elementName {
+            case "vehicleJson":
+                car.jsonString = (currentValue ?? "")
             case "Description":
-                car.description = currentValue ?? ""
+                car.description = (currentValue ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
             case "RegistrationYear":
-                car.registrationYear = currentValue ?? ""
+                car.registrationYear = (currentValue ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
             case "CarMake":
-                car.carMake = currentValue ?? ""
+                car.carMake = (currentValue ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
             case "CarModel":
-                car.carModel = currentValue ?? ""
+                car.carModel = (currentValue ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
             case "BodyStyle":
-                car.bodyStyle = currentValue ?? ""
+                car.bodyStyle = (currentValue ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
             default:
                 return
             }

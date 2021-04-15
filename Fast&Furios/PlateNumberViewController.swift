@@ -8,6 +8,7 @@
 import UIKit
 import Vision
 import VisionKit
+import Kingfisher
 
 extension UIColor {
    convenience init(red: Int, green: Int, blue: Int) {
@@ -28,6 +29,43 @@ extension UIColor {
 }
 
 class PlateNumberViewController: UIViewController, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var carMakeLabel: UILabel! {
+        didSet {
+            carMakeLabel.text = ""
+        }
+    }
+    
+    @IBOutlet weak var modelLabel: UILabel! {
+        didSet {
+            modelLabel.text = ""
+        }
+    }
+    
+    @IBOutlet weak var bodyLabel: UILabel! {
+        didSet {
+            bodyLabel.text = ""
+        }
+    }
+    
+    @IBOutlet weak var engineLabel: UILabel! {
+        didSet {
+            engineLabel.text = ""
+        }
+    }
+    
+    @IBOutlet weak var yearLabel: UILabel! {
+        didSet {
+            yearLabel.text = ""
+        }
+    }
+    @IBOutlet weak var transmissionLabel: UILabel! {
+        didSet {
+            transmissionLabel.text = ""
+        }
+    }
     
     @IBOutlet weak var licensePlateTextField: UITextField! {
         didSet {
@@ -51,6 +89,8 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
     
     private var imagePicker: UIImagePickerController!
     private let states: [String: String] = ["New South Wales": "NSW", "Northern Territory": "NT", "Queensland": "QLD", "South Australia": "SA", "Tasmania": "TAS", "Victoria": "VIC", "Western Australia": "WA"]
+    
+    private var car: CarModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -106,7 +146,10 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
     }
     
     private func processImage(image: UIImage?) {
-        self.loadingView.startAnimating()
+        DispatchQueue.main.async {
+            self.loadingView.startAnimating()
+        }
+        
         // Get the CGImage on which to perform requests.
         guard let cgImage = image?.cgImage else {
             self.loadingView.stopAnimating()
@@ -120,9 +163,12 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
         let request = VNRecognizeTextRequest { (request, error) in
             guard let observations =
                     request.results as? [VNRecognizedTextObservation] else {
-                self.loadingView.stopAnimating()
+                DispatchQueue.main.async {
+                    self.loadingView.stopAnimating()
+                }
                 return
             }
+            
             let recognizedStrings = observations.compactMap { observation in
                 // Return the string of the top VNRecognizedText instance.
                 return observation.topCandidates(1).first?.string
@@ -135,17 +181,23 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
                 }))
                 
                 self.present(alert, animated: true, completion: nil)
-                self.loadingView.stopAnimating()
+                DispatchQueue.main.async {
+                    self.loadingView.stopAnimating()
+                }
                 return
             }
             
             guard let result = recognizedStrings.first else {
-                self.loadingView.stopAnimating()
+                DispatchQueue.main.async {
+                    self.loadingView.stopAnimating()
+                }
                 return
             }
             
-            self.licensePlateTextField.text = result
-            self.loadingView.stopAnimating()
+            DispatchQueue.main.async {
+                self.licensePlateTextField.text = result
+                self.loadingView.stopAnimating()
+            }
         }
         
         request.recognitionLevel = .accurate
@@ -198,6 +250,7 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
                     return
                 }
                 
+                self.getCarDetails()
                 self.nextButton(shouldEnable: true)
             }))
         }
@@ -237,11 +290,39 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
                 return
             }
             
-            if let car = car {
-                //process here
-                self.performSegue(withIdentifier: "showMechanic", sender: nil)
+            //process here
+            guard let carString = car, let data = carString.jsonString.data(using: .utf8) else {
+                return
             }
+            
+            guard let carModel = try? JSONDecoder().decode(CarModel.self, from: data) else {
+                return
+            }
+            
+            self.car = carModel
+            self.showCarDetails(carModel: carModel)
         }
+    }
+    
+    private func showCarDetails(carModel: CarModel) {
+        containerView.isHidden = false
+        carMakeLabel.text = carModel.carMake?.currentTextValue
+        modelLabel.text = carModel.modelDescription?.currentTextValue
+        bodyLabel.text = carModel.bodyStyle?.currentTextValue
+        engineLabel.text = carModel.engine
+        yearLabel.text = carModel.extended?.year
+        transmissionLabel.text = carModel.extended?.transmissionType
+//        imageView.kf.setImage(
+//            with: URL(string: carModel.imageUrl ?? "")!,
+//            placeholder: UIImage(named: "placeholder-image"),
+//            options: [],
+//            progressBlock: { receivedSize, totalSize in
+//                // Progress updated
+//            },
+//            completionHandler: { result in
+//                // Done
+//            }
+//        )
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -257,7 +338,15 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
     }
     
     @IBAction func nextTapped(_ sender: UIButton) {
-        getCarDetails()
+        self.performSegue(withIdentifier: "showMechanic", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMechanic" {
+            if let destination = segue.destination as? PageThreeViewController {
+//                destination.car = self.car
+            }
+        }
     }
 }
 

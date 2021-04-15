@@ -1,0 +1,6 @@
+framework module Pods_Fast_Furios {
+  umbrella header "Pods-Fast&Furios-umbrella.h"
+
+  export *
+  module * { export * }
+}
