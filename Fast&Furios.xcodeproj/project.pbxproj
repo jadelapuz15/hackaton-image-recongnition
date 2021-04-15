@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240B40F92627CE4E007A58B8 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240B40F82627CE4E007A58B8 /* DataViewController.swift */; };
+		24C357022627D40100C9EE99 /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C357012627D40100C9EE99 /* CustomPageViewController.swift */; };
+		24C357072627DCB500C9EE99 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C357062627DCB500C9EE99 /* CheckBox.swift */; };
+		24C357102627E3CD00C9EE99 /* PageOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C3570F2627E3CD00C9EE99 /* PageOneViewController.swift */; };
+		24C357182627F93900C9EE99 /* PageThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C357172627F93900C9EE99 /* PageThreeViewController.swift */; };
 		CD143B8F2627A9F200F4379C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143B8E2627A9F200F4379C /* AppDelegate.swift */; };
 		CD143B912627A9F200F4379C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143B902627A9F200F4379C /* SceneDelegate.swift */; };
 		CD143B932627A9F200F4379C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143B922627A9F200F4379C /* ViewController.swift */; };
@@ -36,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		240B40F82627CE4E007A58B8 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
+		24C357012627D40100C9EE99 /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
+		24C357062627DCB500C9EE99 /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
+		24C3570F2627E3CD00C9EE99 /* PageOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOneViewController.swift; sourceTree = "<group>"; };
+		24C357172627F93900C9EE99 /* PageThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageThreeViewController.swift; sourceTree = "<group>"; };
 		CD143B8B2627A9F200F4379C /* Fast&Furios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fast&Furios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD143B8E2627A9F200F4379C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD143B902627A9F200F4379C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +119,11 @@
 				CD143B9C2627A9F200F4379C /* LaunchScreen.storyboard */,
 				CD143B9F2627A9F200F4379C /* Info.plist */,
 				CD143B972627A9F200F4379C /* Fast_Furios.xcdatamodeld */,
+				240B40F82627CE4E007A58B8 /* DataViewController.swift */,
+				24C357012627D40100C9EE99 /* CustomPageViewController.swift */,
+				24C357062627DCB500C9EE99 /* CheckBox.swift */,
+				24C3570F2627E3CD00C9EE99 /* PageOneViewController.swift */,
+				24C357172627F93900C9EE99 /* PageThreeViewController.swift */,
 			);
 			path = "Fast&Furios";
 			sourceTree = "<group>";
@@ -263,7 +278,12 @@
 			files = (
 				CD143B932627A9F200F4379C /* ViewController.swift in Sources */,
 				CD143B992627A9F200F4379C /* Fast_Furios.xcdatamodeld in Sources */,
+				24C357022627D40100C9EE99 /* CustomPageViewController.swift in Sources */,
+				24C357072627DCB500C9EE99 /* CheckBox.swift in Sources */,
+				24C357182627F93900C9EE99 /* PageThreeViewController.swift in Sources */,
+				240B40F92627CE4E007A58B8 /* DataViewController.swift in Sources */,
 				CD143B8F2627A9F200F4379C /* AppDelegate.swift in Sources */,
+				24C357102627E3CD00C9EE99 /* PageOneViewController.swift in Sources */,
 				CD143B912627A9F200F4379C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

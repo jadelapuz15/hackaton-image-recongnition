@@ -1,3 +1,4 @@
+
 //
 //  ViewController.swift
 //  Fast&Furios
@@ -9,44 +10,59 @@ import UIKit
 import Vision
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet var cb1: CheckBox!
+    @IBOutlet var cb2: CheckBox!
+    @IBOutlet var cb3: CheckBox!
+    @IBOutlet var cb4: CheckBox!
+    let dataSource = ["Page One", "Page Two", "Page Three", "Page Four", ]
+    
+    var currentIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-    }
-    
-    
-    @IBAction func checkTextImage(_ sender: UIButton) {
         
-          // Get the CGImage on which to perform requests.
-          guard let cgImage = sender.backgroundImage(for: .normal)?.cgImage else { return }
-
-          // Create a new image-request handler.
-          let requestHandler = VNImageRequestHandler(cgImage: cgImage)
-
-          // Create a new request to recognize text.
-          let request = VNRecognizeTextRequest { (request, error) in
-              guard let observations =
-                      request.results as? [VNRecognizedTextObservation] else {
-                  return
-              }
-              let recognizedStrings = observations.compactMap { observation in
-                  // Return the string of the top VNRecognizedText instance.
-                  return observation.topCandidates(1).first?.string
-              }
-              
-            self.label.text = recognizedStrings.joined(separator: "\n")
-            print(recognizedStrings)
-          }
-
-          do {
-              // Perform the text-recognition request.
-              try requestHandler.perform([request])
-          } catch {
-              print("Unable to perform the requests: \(error).")
-          }
+        
+        cb1?.style = .square
+        cb2?.style = .cross
+        cb3?.style = .circle
+        cb4?.style = .tick
+        
+        cb1?.borderStyle = .rounded
+        cb2?.borderStyle = .square
+        cb3?.borderStyle = .roundedSquare(radius: 8)
+        cb4?.borderStyle = .roundedSquare(radius: 12)
+        
+//        let cb5 = CheckBox.init()
+//        cb5.frame = CGRect(x: 25, y: 25, width: 35, height: 35)
+//        cb5.style = .tick
+//        cb5.borderStyle = .roundedSquare(radius: 5)
+//        cb5.addTarget(self, action: #selector(onCheckBoxValueChange(_:)), for: .valueChanged)
+//        view.addSubview(cb5)
     }
+    @objc func onCheckBoxValueChange(_ sender: CheckBox) {
+        
+        print(sender.isChecked)
+    }
+    //    func setupPageViewController () {
+    //
+    //        guard let pageViewController = storyboard?.instantiateViewController(identifier: String(describing: CustomPageViewController.self)) as? CustomPageViewController else {
+    //            return
+    //        }
+    //        pageViewController.delegate = self
+    //        pageViewController.dataSource = self
+    //
+    //        addChild(pageViewController)
+    //        pageViewController.didMove(toParent: self)
+    //        pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
+    //        contentView.addSubview(contentView)
+    //        let views: [String : Any] = ["pageView" : pageViewController.view!]
+    //        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-0-[pageView]-0-|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: views))
+    //
+    //        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "L:|-0-[pageView]-0-|",
+    //                                                                  options: NSLayoutConstraint.FormatOptions(rawValue: 0),
+    //                                                                  metrics: nil, views: views))
+    //    }
+    
 }
 
