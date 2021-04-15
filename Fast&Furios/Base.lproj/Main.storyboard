@@ -16,55 +16,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="1d3-7h-zUS">
-                                <rect key="frame" x="16" y="76" width="382" height="532"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTt-qz-sFF">
-                                        <rect key="frame" x="103.5" y="0.0" width="175" height="63"/>
-                                        <state key="normal" backgroundImage="test-plate"/>
-                                        <connections>
-                                            <action selector="checkTextImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ph-3s-oW5"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNx-NW-VhL">
-                                        <rect key="frame" x="0.0" y="109" width="382" height="177"/>
-                                        <state key="normal" backgroundImage="test-plate-2"/>
-                                        <connections>
-                                            <action selector="checkTextImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ayY-8r-Yr0"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlm-zw-Tmf">
-                                        <rect key="frame" x="3.5" y="332" width="375" height="200"/>
-                                        <state key="normal" backgroundImage="test-plate-3"/>
-                                        <connections>
-                                            <action selector="checkTextImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZBV-NM-fzw"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVj-Ja-QbI">
-                                <rect key="frame" x="16" y="624" width="382" height="108"/>
+                                <rect key="frame" x="16" y="472" width="382" height="108"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="108" id="6wE-EI-ElT"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="108" id="6wE-EI-ElT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwb-Yv-PgP">
+                                <rect key="frame" x="16" y="426" width="382" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fmz-lt-Pg1"/>
+                                </constraints>
+                                <state key="normal" title="Take photo or Choose from Library"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HFc-pf-86g"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-image" translatesAutoresizingMaskIntoConstraints="NO" id="Sdh-7C-JSz">
+                                <rect key="frame" x="16" y="60" width="382" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="9AV-fQ-vMa"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="e6c-oj-VhE">
+                                <rect key="frame" x="188.5" y="216.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1d3-7h-zUS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="2FG-El-8p0"/>
-                            <constraint firstAttribute="trailing" secondItem="1d3-7h-zUS" secondAttribute="trailing" constant="16" id="ESq-lb-HkK"/>
-                            <constraint firstItem="yVj-Ja-QbI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="JTv-vM-1sJ"/>
-                            <constraint firstItem="1d3-7h-zUS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="UbK-PJ-mT3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yVj-Ja-QbI" secondAttribute="trailing" constant="16" id="fBR-OC-x5T"/>
-                            <constraint firstItem="yVj-Ja-QbI" firstAttribute="top" secondItem="1d3-7h-zUS" secondAttribute="bottom" constant="16" id="nx6-hE-qek"/>
+                            <constraint firstItem="Sdh-7C-JSz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Ab4-Ze-AMe"/>
+                            <constraint firstItem="yVj-Ja-QbI" firstAttribute="top" secondItem="Lwb-Yv-PgP" secondAttribute="bottom" constant="16" id="OdK-bj-NQN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sdh-7C-JSz" secondAttribute="trailing" constant="16" id="ajg-UC-SGs"/>
+                            <constraint firstItem="Lwb-Yv-PgP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="b2H-53-EjR"/>
+                            <constraint firstItem="Sdh-7C-JSz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="cVX-er-4mm"/>
+                            <constraint firstItem="e6c-oj-VhE" firstAttribute="centerY" secondItem="Sdh-7C-JSz" secondAttribute="centerY" id="fCP-zN-zIT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yVj-Ja-QbI" secondAttribute="trailing" constant="16" id="pOG-8v-471"/>
+                            <constraint firstItem="yVj-Ja-QbI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="sUo-jL-kGs"/>
+                            <constraint firstItem="Lwb-Yv-PgP" firstAttribute="top" secondItem="Sdh-7C-JSz" secondAttribute="bottom" constant="16" id="sbt-TC-6Ty"/>
+                            <constraint firstItem="e6c-oj-VhE" firstAttribute="centerX" secondItem="Sdh-7C-JSz" secondAttribute="centerX" id="tOc-pv-r6E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lwb-Yv-PgP" secondAttribute="trailing" constant="16" id="zMG-in-rgb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="Sdh-7C-JSz" id="1Aa-nS-uDl"/>
                         <outlet property="label" destination="yVj-Ja-QbI" id="9Tl-89-gjj"/>
+                        <outlet property="loadingView" destination="e6c-oj-VhE" id="JVa-02-obs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -73,9 +73,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="test-plate" width="175" height="63"/>
-        <image name="test-plate-2" width="108" height="30"/>
-        <image name="test-plate-3" width="375" height="200"/>
+        <image name="placeholder-image" width="450" height="248.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
