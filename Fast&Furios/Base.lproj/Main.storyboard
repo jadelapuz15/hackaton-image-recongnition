@@ -43,9 +43,9 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yVj-Ja-QbI">
-                                <rect key="frame" x="16" y="624" width="382" height="48"/>
+                                <rect key="frame" x="16" y="624" width="382" height="108"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="UrS-Hw-Mhg"/>
+                                    <constraint firstAttribute="height" constant="108" id="6wE-EI-ElT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <nil key="textColor"/>
@@ -69,12 +69,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="91" y="36"/>
+            <point key="canvasLocation" x="89.855072463768124" y="35.491071428571423"/>
         </scene>
     </scenes>
     <resources>
         <image name="test-plate" width="175" height="63"/>
-        <image name="test-plate-2" width="493.5" height="177"/>
+        <image name="test-plate-2" width="108" height="30"/>
         <image name="test-plate-3" width="375" height="200"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
