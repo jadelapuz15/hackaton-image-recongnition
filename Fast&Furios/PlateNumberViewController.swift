@@ -239,6 +239,7 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
             
             if let car = car {
                 //process here
+                self.performSegue(withIdentifier: "showMechanic", sender: nil)
             }
         }
     }
