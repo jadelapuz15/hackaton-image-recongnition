@@ -49,6 +49,10 @@ class PageOneViewController: UIViewController {
         cb4.isChecked = false
         cb5.isChecked = true
     }
+    @IBAction func onNextClicked(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "showStateView", sender: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         

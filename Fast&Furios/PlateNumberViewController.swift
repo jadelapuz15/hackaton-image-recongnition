@@ -219,29 +219,30 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
             return
         }
         
-        CarParser.shared.requestCarDetails(plateNumber: license, state: state) { (car, error) in
-            defer {
-                DispatchQueue.main.async {
-                    self.loadingView.stopAnimating()
-                }
-            }
-            
-            guard error == nil else {
-                let error = UIAlertController(title: "Oops!", message: error?.localizedDescription, preferredStyle: .alert)
-                
-                error.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                
-                DispatchQueue.main.async {
-                    self.present(error, animated: true, completion: nil)
-                }
-                return
-            }
-            
-            if let car = car {
-                //process here
-                self.performSegue(withIdentifier: "showMechanic", sender: nil)
-            }
-        }
+        self.performSegue(withIdentifier: "showMechanic", sender: nil)
+//        CarParser.shared.requestCarDetails(plateNumber: license, state: state) { (car, error) in
+//            defer {
+//                DispatchQueue.main.async {
+//                    self.loadingView.stopAnimating()
+//                }
+//            }
+//
+//            guard error == nil else {
+//                let error = UIAlertController(title: "Oops!", message: error?.localizedDescription, preferredStyle: .alert)
+//
+//                error.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//
+//                DispatchQueue.main.async {
+//                    self.present(error, animated: true, completion: nil)
+//                }
+//                return
+//            }
+//
+//            if let car = car {
+//                //process here
+//                self.performSegue(withIdentifier: "showMechanic", sender: nil)
+//            }
+//        }
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
