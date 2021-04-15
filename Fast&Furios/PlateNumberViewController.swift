@@ -27,7 +27,7 @@ extension UIColor {
    }
 }
 
-class ViewController: UIViewController, UINavigationControllerDelegate {
+class PlateNumberViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var licensePlateTextField: UITextField! {
         didSet {
@@ -55,7 +55,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         selectTextField.delegate = self
-        licensePlateTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), for: .editingChanged)
+        licensePlateTextField.addTarget(self, action: #selector(PlateNumberViewController.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     @IBAction func takePhoto(_ sender: UIButton) {
@@ -260,14 +260,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
 }
 
-extension ViewController: UITextFieldDelegate {
+extension PlateNumberViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         showActionSheet()
         return false
     }
 }
 
-extension ViewController: UIImagePickerControllerDelegate, VNDocumentCameraViewControllerDelegate {
+extension PlateNumberViewController: UIImagePickerControllerDelegate, VNDocumentCameraViewControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         

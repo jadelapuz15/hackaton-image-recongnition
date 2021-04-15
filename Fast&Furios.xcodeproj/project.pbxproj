@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CD143B8F2627A9F200F4379C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143B8E2627A9F200F4379C /* AppDelegate.swift */; };
 		CD143B912627A9F200F4379C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143B902627A9F200F4379C /* SceneDelegate.swift */; };
-		CD143B932627A9F200F4379C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143B922627A9F200F4379C /* ViewController.swift */; };
+		CD143B932627A9F200F4379C /* PlateNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143B922627A9F200F4379C /* PlateNumberViewController.swift */; };
 		CD143B962627A9F200F4379C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD143B942627A9F200F4379C /* Main.storyboard */; };
 		CD143B992627A9F200F4379C /* Fast_Furios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD143B972627A9F200F4379C /* Fast_Furios.xcdatamodeld */; };
 		CD143B9B2627A9F200F4379C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD143B9A2627A9F200F4379C /* Assets.xcassets */; };
@@ -40,7 +40,7 @@
 		CD143B8B2627A9F200F4379C /* Fast&Furios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fast&Furios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD143B8E2627A9F200F4379C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD143B902627A9F200F4379C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CD143B922627A9F200F4379C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CD143B922627A9F200F4379C /* PlateNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlateNumberViewController.swift; sourceTree = "<group>"; };
 		CD143B952627A9F200F4379C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD143B982627A9F200F4379C /* Fast_Furios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fast_Furios.xcdatamodel; sourceTree = "<group>"; };
 		CD143B9A2627A9F200F4379C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 			children = (
 				CD143B8E2627A9F200F4379C /* AppDelegate.swift */,
 				CD143B902627A9F200F4379C /* SceneDelegate.swift */,
-				CD143B922627A9F200F4379C /* ViewController.swift */,
+				CD143B922627A9F200F4379C /* PlateNumberViewController.swift */,
 				CD143B942627A9F200F4379C /* Main.storyboard */,
 				CD143B9A2627A9F200F4379C /* Assets.xcassets */,
 				CD143B9C2627A9F200F4379C /* LaunchScreen.storyboard */,
@@ -264,7 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD143B932627A9F200F4379C /* ViewController.swift in Sources */,
+				CD143B932627A9F200F4379C /* PlateNumberViewController.swift in Sources */,
 				CD143BD12627D0A300F4379C /* CarParser.swift in Sources */,
 				CD143B992627A9F200F4379C /* Fast_Furios.xcdatamodeld in Sources */,
 				CD143B8F2627A9F200F4379C /* AppDelegate.swift in Sources */,
