@@ -9,17 +9,48 @@ import UIKit
 import Vision
 import VisionKit
 
+extension UIColor {
+   convenience init(red: Int, green: Int, blue: Int) {
+       assert(red >= 0 && red <= 255, "Invalid red component")
+       assert(green >= 0 && green <= 255, "Invalid green component")
+       assert(blue >= 0 && blue <= 255, "Invalid blue component")
+
+       self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+   }
+
+   convenience init(rgb: Int) {
+       self.init(
+           red: (rgb >> 16) & 0xFF,
+           green: (rgb >> 8) & 0xFF,
+           blue: rgb & 0xFF
+       )
+   }
+}
+
 class ViewController: UIViewController, UINavigationControllerDelegate {
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var licensePlateTextField: UITextField!
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var selectTextField: UITextField!
     
-    var imagePicker: UIImagePickerController!
+    @IBOutlet weak var backButton: UIButton! {
+        didSet {
+        }
+    }
+    
+    @IBOutlet weak var nextButton: UIButton! {
+        didSet {
+            nextButton(shouldEnable: false)
+        }
+    }
+    
+    private var imagePicker: UIImagePickerController!
+    private let states: [String: String] = ["New South Wales": "NSW", "Northern Territory": "NT", "Queensland": "QLD", "South Australia": "SA", "Tasmania": "TAS", "Victoria": "VIC", "Western Australia": "WA"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        selectTextField.delegate = self
+        licensePlateTextField.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), for: .editingChanged)
     }
     
     @IBAction func takePhoto(_ sender: UIButton) {
@@ -91,7 +122,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 let alert = UIAlertController(title: "Error", message: "No text was recognized on the image", preferredStyle: .alert)
                 
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
-                    self.imageView.image = nil
                 }))
                 
                 self.present(alert, animated: true, completion: nil)
@@ -102,23 +132,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 return
             }
             
-            CarParser.shared.requestCarDetails(plateNumber: result, state: "NSW") { (car, error) in
-                
-                defer {
-                    DispatchQueue.main.async {
-                        self.loadingView.stopAnimating()
-                    }
-                }
-                
-                guard error == nil else {
-                    print(error?.localizedDescription)
-                    return
-                }
-                
-                if let car = car {
-                    self.label.text = car.description
-                }
-            }
+            self.licensePlateTextField.text = result
         }
         
         request.recognitionLevel = .accurate
@@ -131,18 +145,88 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         }
     }
     
+    private func nextButton(shouldEnable: Bool) {
+        if shouldEnable {
+            nextButton.backgroundColor = UIColor.white
+            nextButton.setTitleColor(.black, for: .normal)
+        } else {
+            nextButton.backgroundColor = UIColor(rgb: 0xEBEBEB)
+            nextButton.setTitleColor(.lightGray, for: .normal)
+        }
+        
+        nextButton.isEnabled = shouldEnable
+    }
+    
+    private func showActionSheet() {
+        let actionSheet = UIAlertController(title: "", message: "Please select a state", preferredStyle: .actionSheet)
+        
+        for (key, value) in states {
+            actionSheet.addAction(UIAlertAction(title: key, style: .default, handler: { (action) in
+                self.selectTextField.text = value
+                guard let license = self.licensePlateTextField.text, !license.isEmpty else {
+                    return
+                }
+                
+                self.nextButton(shouldEnable: true)
+                
+            }))
+        }
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
+        
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    private func getCarDetails() {
+        guard let license = licensePlateTextField.text, let state = selectTextField.text else {
+            return
+        }
+        
+        CarParser.shared.requestCarDetails(plateNumber: license, state: state) { (car, error) in
+            defer {
+                DispatchQueue.main.async {
+                    self.loadingView.stopAnimating()
+                }
+            }
+            
+            guard error == nil else {
+                print(error?.localizedDescription)
+                return
+            }
+            
+            if let car = car {
+                //process here
+            }
+        }
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        guard let license = textField.text, let state = selectTextField.text, !license.isEmpty, !state.isEmpty else {
+            nextButton(shouldEnable: false)
+            return
+        }
+        
+        nextButton(shouldEnable: true)
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        showActionSheet()
+        return false
+    }
 }
 
 extension ViewController: UIImagePickerControllerDelegate, VNDocumentCameraViewControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.loadingView.startAnimating()
+        
         guard let pickedImage = info[.originalImage] as? UIImage else {
             return
         }
         
         DispatchQueue.main.async {
-            self.loadingView.startAnimating()
-            self.imageView.image = pickedImage
             self.processImage(image: pickedImage)
         }
         
