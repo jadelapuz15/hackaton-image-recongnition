@@ -56,6 +56,7 @@
                                 </constraints>
                                 <connections>
                                     <action selector="cb1:" destination="uRL-bf-FHT" eventType="valueChanged" id="q5D-vH-Myd"/>
+                                    <action selector="onCb1Checked:" destination="o8X-Hv-0pl" eventType="valueChanged" id="89r-4m-mNo"/>
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iBn-46-ETo" customClass="CheckBox" customModule="Fast_Furios" customModuleProvider="target">
@@ -65,6 +66,9 @@
                                     <constraint firstAttribute="width" constant="30" id="EYe-xC-qGk"/>
                                     <constraint firstAttribute="height" constant="30" id="y5Q-MV-p2C"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="onCb2Checked:" destination="o8X-Hv-0pl" eventType="valueChanged" id="fi5-oT-pbY"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bnu-Xs-fgG" customClass="CheckBox" customModule="Fast_Furios" customModuleProvider="target">
                                 <rect key="frame" x="21" y="208" width="30" height="30"/>
@@ -73,6 +77,9 @@
                                     <constraint firstAttribute="height" constant="30" id="qmZ-KU-DaN"/>
                                     <constraint firstAttribute="width" constant="30" id="uFr-Pf-bff"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="onCb3Checked:" destination="o8X-Hv-0pl" eventType="valueChanged" id="ppS-kL-W05"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyj-sg-3eA" customClass="CheckBox" customModule="Fast_Furios" customModuleProvider="target">
                                 <rect key="frame" x="21" y="253" width="30" height="30"/>
@@ -81,6 +88,9 @@
                                     <constraint firstAttribute="width" constant="30" id="33X-zX-EZx"/>
                                     <constraint firstAttribute="height" constant="30" id="kaI-BZ-Sye"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="onCb4Checked:" destination="o8X-Hv-0pl" eventType="valueChanged" id="I0n-Ju-Thz"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CVX-aR-tSr" customClass="CheckBox" customModule="Fast_Furios" customModuleProvider="target">
                                 <rect key="frame" x="20" y="298" width="30" height="30"/>
@@ -89,6 +99,9 @@
                                     <constraint firstAttribute="width" constant="30" id="n2j-68-QYj"/>
                                     <constraint firstAttribute="height" constant="30" id="vNh-xF-KXq"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="onCb5Checked:" destination="o8X-Hv-0pl" eventType="valueChanged" id="80d-y1-hyI"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pre purchase inspections" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usf-8a-Ovg">
                                 <rect key="frame" x="61" y="124" width="330" height="18"/>
@@ -177,6 +190,7 @@
                         <outlet property="cb2" destination="iBn-46-ETo" id="Fe2-P9-GhR"/>
                         <outlet property="cb3" destination="bnu-Xs-fgG" id="v6t-eI-wib"/>
                         <outlet property="cb4" destination="Xyj-sg-3eA" id="qCV-3w-PtZ"/>
+                        <outlet property="cb5" destination="CVX-aR-tSr" id="uC8-a1-8sT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yW4-Mx-LYP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
