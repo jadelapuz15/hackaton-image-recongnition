@@ -219,6 +219,9 @@
                                     <constraint firstAttribute="width" constant="30" id="lls-Ca-MY6"/>
                                     <constraint firstAttribute="height" constant="30" id="o2E-V1-xZR"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="onCb1Checked:" destination="nKN-46-8Yu" eventType="valueChanged" id="173-ID-uSS"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xXR-s7-9yc" customClass="CheckBox" customModule="Fast_Furios" customModuleProvider="target">
                                 <rect key="frame" x="21" y="177.5" width="30" height="30"/>
@@ -227,6 +230,9 @@
                                     <constraint firstAttribute="height" constant="30" id="l2H-uw-XKm"/>
                                     <constraint firstAttribute="width" constant="30" id="viH-Aq-mAI"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="onCb2Checked:" destination="nKN-46-8Yu" eventType="valueChanged" id="shl-g2-rGE"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X2Z-cK-e5c">
                                 <rect key="frame" x="61" y="138.5" width="333" height="21"/>
