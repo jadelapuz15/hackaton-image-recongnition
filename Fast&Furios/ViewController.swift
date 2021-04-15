@@ -29,7 +29,12 @@ extension UIColor {
 
 class ViewController: UIViewController, UINavigationControllerDelegate {
     
-    @IBOutlet weak var licensePlateTextField: UITextField!
+    @IBOutlet weak var licensePlateTextField: UITextField! {
+        didSet {
+            addDoneButtonOnKeyboard()
+        }
+    }
+    
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
     @IBOutlet weak var selectTextField: UITextField!
     
@@ -101,8 +106,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     private func processImage(image: UIImage?) {
+        self.loadingView.startAnimating()
         // Get the CGImage on which to perform requests.
-        guard let cgImage = image?.cgImage else { return }
+        guard let cgImage = image?.cgImage else {
+            self.loadingView.stopAnimating()
+            return
+        }
         
         // Create a new image-request handler.
         let requestHandler = VNImageRequestHandler(cgImage: cgImage)
@@ -111,6 +120,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         let request = VNRecognizeTextRequest { (request, error) in
             guard let observations =
                     request.results as? [VNRecognizedTextObservation] else {
+                self.loadingView.stopAnimating()
                 return
             }
             let recognizedStrings = observations.compactMap { observation in
@@ -125,14 +135,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 }))
                 
                 self.present(alert, animated: true, completion: nil)
+                self.loadingView.stopAnimating()
                 return
             }
             
             guard let result = recognizedStrings.first else {
+                self.loadingView.stopAnimating()
                 return
             }
             
             self.licensePlateTextField.text = result
+            self.loadingView.stopAnimating()
         }
         
         request.recognitionLevel = .accurate
@@ -157,6 +170,24 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         nextButton.isEnabled = shouldEnable
     }
     
+    func addDoneButtonOnKeyboard(){
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        doneToolbar.barStyle = .default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        
+        let items = [flexSpace, done]
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        licensePlateTextField.inputAccessoryView = doneToolbar
+    }
+    
+    @objc func doneButtonAction(){
+        licensePlateTextField.resignFirstResponder()
+    }
+    
     private func showActionSheet() {
         let actionSheet = UIAlertController(title: "", message: "Please select a state", preferredStyle: .actionSheet)
         
@@ -168,7 +199,6 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
                 }
                 
                 self.nextButton(shouldEnable: true)
-                
             }))
         }
         
@@ -178,7 +208,14 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     private func getCarDetails() {
+        self.loadingView.startAnimating()
+        
         guard let license = licensePlateTextField.text, let state = selectTextField.text else {
+            let error = UIAlertController(title: "Wait!", message: "Please fill all fields", preferredStyle: .alert)
+            
+            error.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            
+            self.present(error, animated: true, completion: nil)
             return
         }
         
@@ -190,7 +227,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
             }
             
             guard error == nil else {
-                print(error?.localizedDescription)
+                let error = UIAlertController(title: "Oops!", message: error?.localizedDescription, preferredStyle: .alert)
+                
+                error.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                DispatchQueue.main.async {
+                    self.present(error, animated: true, completion: nil)
+                }
                 return
             }
             
@@ -208,6 +251,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         
         nextButton(shouldEnable: true)
     }
+    
+    @IBAction func backTapped(_ sender: Any) {
+    }
+    
+    @IBAction func nextTapped(_ sender: UIButton) {
+        getCarDetails()
+    }
 }
 
 extension ViewController: UITextFieldDelegate {
@@ -220,7 +270,6 @@ extension ViewController: UITextFieldDelegate {
 extension ViewController: UIImagePickerControllerDelegate, VNDocumentCameraViewControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        self.loadingView.startAnimating()
         
         guard let pickedImage = info[.originalImage] as? UIImage else {
             return

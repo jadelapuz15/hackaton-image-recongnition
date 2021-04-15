@@ -29,25 +29,36 @@ class CarParser: NSObject {
     }
     
     func requestCarDetails(plateNumber: String, state: String, completion: @escaping (_ car: Car?, _ error: Error?) -> ()) {
-        let url = URL(string: "http://www.carregistrationapi.com/api/reg.asmx/CheckAustralia?RegistrationNumber=\(plateNumber)&username=oneflare&State=\(state)")!
-                let task = URLSession.shared.dataTask(with: url) { data, _, error in
-                    guard let data = data, error == nil else {
-                        DispatchQueue.main.async {
-                           completion(nil, error)
-                        }
-                        return
-                    }
-                    
-                    UserDefaults.standard.setValue(data, forKey: "data")
-                    let parser = XMLParser(data: data)
-                    parser.delegate = self
-                    DispatchQueue.main.async {
-                        if parser.parse() {
-                            completion(self.car, nil)
-                        }
-                    }
+        guard let url = URL(string: "http://www.carregistrationapi.com/api/reg.asmx/CheckAustralia?RegistrationNumber=\(plateNumber)&username=oneflare&State=\(state)") else {
+            let error = NSError(domain: "", code: 400, userInfo: [NSLocalizedDescriptionKey: "Invalid License plate"])
+            completion(nil, error)
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data, error == nil else {
+                DispatchQueue.main.async {
+                    completion(nil, error)
                 }
-                task.resume()
+                return
+            }
+            
+            let stringResponse = String(decoding: data, as: UTF8.self)
+            
+            if stringResponse.contains("Australian Lookup failed") {
+                let error = NSError(domain: url.description, code: 400, userInfo: [NSLocalizedDescriptionKey: "No information found for license plate: \(plateNumber)"])
+                completion(nil, error)
+            }
+            
+            let parser = XMLParser(data: data)
+            parser.delegate = self
+            DispatchQueue.main.async {
+                if parser.parse() {
+                    completion(self.car, nil)
+                }
+            }
+        }
+        task.resume()
     }
 }
 
@@ -60,7 +71,7 @@ extension CarParser: XMLParserDelegate {
     //
     // - If we're starting a "record" create the dictionary that will hold the results
     // - If we're starting one of our dictionary keys, initialize `currentValue` (otherwise leave `nil`)
-
+    
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         if dictionaryKeys.contains(elementName) {
             
@@ -77,14 +88,14 @@ extension CarParser: XMLParserDelegate {
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         
         self.currentValue? += string
-
+        
     }
-
+    
     // end element
     //
     // - If we're at the end of the whole dictionary, then save that dictionary in our array
     // - If we're at the end of an element that belongs in the dictionary, then save that value in the dictionary
-
+    
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if dictionaryKeys.contains(elementName) {
             
@@ -107,12 +118,12 @@ extension CarParser: XMLParserDelegate {
         }
         
     }
-
+    
     // Just in case, if there's an error, report it. (We don't want to fly blind here.)
-
+    
     func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
         print(parseError)
-
+        
         self.currentValue = nil
     }
 }
