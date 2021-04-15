@@ -29,7 +29,7 @@ class CarParser: NSObject {
     }
     
     func requestCarDetails(plateNumber: String, state: String, completion: @escaping (_ car: Car?, _ error: Error?) -> ()) {
-        guard let url = URL(string: "http://www.carregistrationapi.com/api/reg.asmx/CheckAustralia?RegistrationNumber=\(plateNumber)&username=oneflare&State=\(state)") else {
+        guard let urlString = "http://www.carregistrationapi.com/api/reg.asmx/CheckAustralia?RegistrationNumber=\(plateNumber)&username=oneflare&State=\(state)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: urlString) else {
             let error = NSError(domain: "", code: 400, userInfo: [NSLocalizedDescriptionKey: "Invalid License plate"])
             completion(nil, error)
             return
