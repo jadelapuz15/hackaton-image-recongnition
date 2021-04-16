@@ -28,6 +28,13 @@ extension UIColor {
    }
 }
 
+extension String {
+    var stripped: String {
+        let okayChars = Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890+-=().!_")
+        return self.filter {okayChars.contains($0) }
+    }
+}
+
 class PlateNumberViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
@@ -185,7 +192,7 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
             }
             
             DispatchQueue.main.async {
-                self.licensePlateTextField.text = result
+                self.licensePlateTextField.text = result.stripped
                 self.getCarDetails(result: result)
             }
         }
