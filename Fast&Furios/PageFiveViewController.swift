@@ -9,6 +9,13 @@ import UIKit
 
 class PageFiveViewController: UIViewController {
 
+    @IBOutlet weak var nextButton: UIButton! {
+        didSet {
+            nextButton.backgroundColor = UIColor(rgb: 0x3D9EA0)
+            nextButton.setTitleColor(.white, for: .normal)
+        }
+    }
+    
     @IBAction func onNextClicked(_ sender: Any) {
         self.performSegue(withIdentifier: "showPageSix", sender: nil)
     }

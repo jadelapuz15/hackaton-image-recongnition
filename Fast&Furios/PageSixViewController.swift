@@ -9,6 +9,13 @@ import UIKit
 
 class PageSixViewController: UIViewController, UINavigationControllerDelegate {
 
+    @IBOutlet weak var nextButton: UIButton! {
+        didSet {
+            nextButton.backgroundColor = UIColor(rgb: 0x3D9EA0)
+            nextButton.setTitleColor(.white, for: .normal)
+        }
+    }
+    
     @IBOutlet weak var textField: UITextView!
     @IBAction func onRequestQuoteClicked(_ sender: Any) {
         let error = UIAlertController(title: "Success!", message: "Your request to qoute has been submitted.", preferredStyle: .alert)
