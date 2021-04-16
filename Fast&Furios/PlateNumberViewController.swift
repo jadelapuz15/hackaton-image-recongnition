@@ -30,7 +30,7 @@ extension UIColor {
 
 extension String {
     var stripped: String {
-        let okayChars = Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890+-=().!_")
+        let okayChars = Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890")
         return self.filter {okayChars.contains($0) }
     }
 }
