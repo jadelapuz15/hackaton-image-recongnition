@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,12 @@
 		CD143BA92627A9F200F4379C /* Fast_FuriosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143BA82627A9F200F4379C /* Fast_FuriosTests.swift */; };
 		CD143BB42627A9F200F4379C /* Fast_FuriosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143BB32627A9F200F4379C /* Fast_FuriosUITests.swift */; };
 		CD143BD12627D0A300F4379C /* CarParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD143BD02627D0A300F4379C /* CarParser.swift */; };
+		CD672F91262918C10021BF58 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD672F8E262918BD0021BF58 /* Montserrat-Bold.otf */; };
+		CD672F95262918C40021BF58 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD672F8D262918BD0021BF58 /* Montserrat-Light.otf */; };
+		CD672F99262918C60021BF58 /* Montserrat-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD672F8F262918BD0021BF58 /* Montserrat-Medium.otf */; };
+		CD672F9D262918C80021BF58 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD672F8C262918BD0021BF58 /* Montserrat-Regular.otf */; };
+		CD672FA1262918CB0021BF58 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CD672F90262918BD0021BF58 /* Montserrat-SemiBold.otf */; };
+		CD672FA6262918F80021BF58 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD672FA5262918F80021BF58 /* Font.swift */; };
 		CD81CB4A26280A420023E107 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD81CB4926280A420023E107 /* CarModel.swift */; };
 		E5F595844CA9A084F29BFF65 /* Pods_Fast_Furios_Fast_FuriosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E66460CB91D0A98FDD836C01 /* Pods_Fast_Furios_Fast_FuriosUITests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +86,12 @@
 		CD143BB32627A9F200F4379C /* Fast_FuriosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fast_FuriosUITests.swift; sourceTree = "<group>"; };
 		CD143BB52627A9F200F4379C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CD143BD02627D0A300F4379C /* CarParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarParser.swift; sourceTree = "<group>"; };
+		CD672F8C262918BD0021BF58 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		CD672F8D262918BD0021BF58 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		CD672F8E262918BD0021BF58 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		CD672F8F262918BD0021BF58 /* Montserrat-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.otf"; sourceTree = "<group>"; };
+		CD672F90262918BD0021BF58 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		CD672FA5262918F80021BF58 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		CD81CB4926280A420023E107 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 		CE4503CF6867536195B02402 /* Pods-Fast&FuriosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fast&FuriosTests.release.xcconfig"; path = "Target Support Files/Pods-Fast&FuriosTests/Pods-Fast&FuriosTests.release.xcconfig"; sourceTree = "<group>"; };
 		E66460CB91D0A98FDD836C01 /* Pods_Fast_Furios_Fast_FuriosUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fast_Furios_Fast_FuriosUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,7 +137,6 @@
 				82C925472ECAE0DB2A071205 /* Pods-Fast&FuriosTests.debug.xcconfig */,
 				CE4503CF6867536195B02402 /* Pods-Fast&FuriosTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -154,6 +165,7 @@
 		CD143B8D2627A9F200F4379C /* Fast&Furios */ = {
 			isa = PBXGroup;
 			children = (
+				CD672F8B262918870021BF58 /* Fonts */,
 				CD81CB4826280A350023E107 /* Model */,
 				CD143B8E2627A9F200F4379C /* AppDelegate.swift */,
 				CD143B902627A9F200F4379C /* SceneDelegate.swift */,
@@ -195,9 +207,22 @@
 			path = "Fast&FuriosUITests";
 			sourceTree = "<group>";
 		};
+		CD672F8B262918870021BF58 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CD672FA5262918F80021BF58 /* Font.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		CD81CB4826280A350023E107 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD672F8E262918BD0021BF58 /* Montserrat-Bold.otf */,
+				CD672F8D262918BD0021BF58 /* Montserrat-Light.otf */,
+				CD672F8F262918BD0021BF58 /* Montserrat-Medium.otf */,
+				CD672F8C262918BD0021BF58 /* Montserrat-Regular.otf */,
+				CD672F90262918BD0021BF58 /* Montserrat-SemiBold.otf */,
 				CD81CB4926280A420023E107 /* CarModel.swift */,
 			);
 			path = Model;
@@ -321,9 +346,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD672F95262918C40021BF58 /* Montserrat-Light.otf in Resources */,
+				CD672FA1262918CB0021BF58 /* Montserrat-SemiBold.otf in Resources */,
+				CD672F99262918C60021BF58 /* Montserrat-Medium.otf in Resources */,
 				CD143B9E2627A9F200F4379C /* LaunchScreen.storyboard in Resources */,
 				CD143B9B2627A9F200F4379C /* Assets.xcassets in Resources */,
 				CD143B962627A9F200F4379C /* Main.storyboard in Resources */,
+				CD672F9D262918C80021BF58 /* Montserrat-Regular.otf in Resources */,
+				CD672F91262918C10021BF58 /* Montserrat-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +493,7 @@
 				24C357182627F93900C9EE99 /* PageThreeViewController.swift in Sources */,
 				240B40F92627CE4E007A58B8 /* DataViewController.swift in Sources */,
 				CD143B8F2627A9F200F4379C /* AppDelegate.swift in Sources */,
+				CD672FA6262918F80021BF58 /* Font.swift in Sources */,
 				24AFE9BF262815B2004AA97C /* PageFiveViewController.swift in Sources */,
 				24C357102627E3CD00C9EE99 /* PageOneViewController.swift in Sources */,
 				CD143B912627A9F200F4379C /* SceneDelegate.swift in Sources */,

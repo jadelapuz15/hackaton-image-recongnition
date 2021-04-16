@@ -9,57 +9,80 @@ import UIKit
 
 class VehicleStateViewController: UIViewController {
     
+    @IBOutlet weak var norCb: CheckBox! {
+        didSet {
+            norCb.style = .tick
+        }
+    }
+    
+    @IBOutlet weak var saCb: CheckBox! {
+        didSet {
+            saCb.style = .tick
+        }
+    }
+    
+    @IBOutlet weak var wesCb: CheckBox! {
+        didSet {
+            wesCb.style = .tick
+        }
+    }
+    
+    @IBOutlet weak var tasCb: CheckBox! {
+        didSet {
+            tasCb.style = .tick
+        }
+    }
+    
+    @IBOutlet weak var vicCb: CheckBox! {
+        didSet {
+            vicCb.style = .tick
+        }
+    }
+    
+    @IBOutlet weak var qldCb: CheckBox! {
+        didSet {
+            qldCb.style = .tick
+        }
+    }
+    
+    @IBOutlet weak var nswCb: CheckBox! {
+        didSet {
+            nswCb.style = .tick
+        }
+    }
+    
     @IBOutlet weak var nextButton: UIButton! {
         didSet {
             nextButton(shouldEnable: false)
         }
     }
     
-    @IBOutlet weak var selectStateTextField: UITextField!
-    
-    @IBAction func onNextClicked(_ sender: Any) { self.performSegue(withIdentifier: "showPlateNumberView", sender: nil)
+    @IBAction func onNextClicked(_ sender: Any) {
+        self.performSegue(withIdentifier: "showPlateNumberView", sender: nil)
     }
     
-    private let states: [String: String] = ["New South Wales": "NSW", "Northern Territory": "NT", "Queensland": "QLD", "South Australia": "SA", "Tasmania": "TAS", "Victoria": "VIC", "Western Australia": "WA"]
+    private var selectedState: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectStateTextField.delegate = self
+
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "oneflare-ic"))
+
         // Do any additional setup after loading the view.
-    }
-    
-    private func showActionSheet() {
-        let actionSheet = UIAlertController(title: "", message: "Please select a state", preferredStyle: .actionSheet)
-        
-        for (key, value) in states {
-            actionSheet.addAction(UIAlertAction(title: key, style: .default, handler: { (action) in
-                self.selectStateTextField.text = value
-                guard let license = self.selectStateTextField.text, !license.isEmpty else {
-                    return
-                }
-                
-                self.nextButton(shouldEnable: true)
-            }))
-        }
-        
-        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: nil))
-        
-        self.present(actionSheet, animated: true, completion: nil)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showPlateNumberView" {
             if let destination = segue.destination as? PlateNumberViewController {
-                destination.selectedState = selectStateTextField.text ?? ""
+                destination.selectedState = selectedState
             }
         }
     }
     
     private func nextButton(shouldEnable: Bool) {
         if shouldEnable {
-            nextButton.backgroundColor = UIColor.white
-            nextButton.setTitleColor(.black, for: .normal)
+            nextButton.backgroundColor = UIColor(rgb: 0x3D9EA0)
+            nextButton.setTitleColor(.white, for: .normal)
         } else {
             nextButton.backgroundColor = UIColor(rgb: 0xEBEBEB)
             nextButton.setTitleColor(.lightGray, for: .normal)
@@ -67,11 +90,77 @@ class VehicleStateViewController: UIViewController {
         
         nextButton.isEnabled = shouldEnable
     }
-}
-
-extension VehicleStateViewController: UITextFieldDelegate {
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        showActionSheet()
-        return false
+    
+    @IBAction func checkBoxValueChanged(_ sender: CheckBox) {
+        switch sender {
+        case norCb:
+            selectedState = "NT"
+            norCb.isChecked = true
+            saCb.isChecked = false
+            wesCb.isChecked = false
+            tasCb.isChecked = false
+            vicCb.isChecked = false
+            qldCb.isChecked = false
+            nswCb.isChecked = false
+        case saCb:
+            selectedState = "SA"
+            norCb.isChecked = false
+            saCb.isChecked = true
+            wesCb.isChecked = false
+            tasCb.isChecked = false
+            vicCb.isChecked = false
+            qldCb.isChecked = false
+            nswCb.isChecked = false
+        case wesCb:
+            selectedState = "WA"
+            norCb.isChecked = false
+            saCb.isChecked = false
+            wesCb.isChecked = true
+            tasCb.isChecked = false
+            vicCb.isChecked = false
+            qldCb.isChecked = false
+            nswCb.isChecked = false
+        case tasCb:
+            selectedState = "TAS"
+            norCb.isChecked = false
+            saCb.isChecked = false
+            wesCb.isChecked = false
+            tasCb.isChecked = true
+            vicCb.isChecked = false
+            qldCb.isChecked = false
+            nswCb.isChecked = false
+        case vicCb:
+            selectedState = "VIC"
+            norCb.isChecked = false
+            saCb.isChecked = false
+            wesCb.isChecked = false
+            tasCb.isChecked = false
+            vicCb.isChecked = true
+            qldCb.isChecked = false
+            nswCb.isChecked = false
+        case qldCb:
+            selectedState = "QLD"
+            norCb.isChecked = false
+            saCb.isChecked = false
+            wesCb.isChecked = false
+            tasCb.isChecked = false
+            vicCb.isChecked = false
+            qldCb.isChecked = true
+            nswCb.isChecked = false
+        case nswCb:
+            selectedState = "NSW"
+            norCb.isChecked = false
+            saCb.isChecked = false
+            wesCb.isChecked = false
+            tasCb.isChecked = false
+            vicCb.isChecked = false
+            qldCb.isChecked = false
+            nswCb.isChecked = true
+        default:
+            break
+        }
+        
+        nextButton(shouldEnable: true)
     }
+    
 }

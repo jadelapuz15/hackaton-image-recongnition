@@ -203,8 +203,8 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
     
     private func nextButton(shouldEnable: Bool) {
         if shouldEnable {
-            nextButton.backgroundColor = UIColor.white
-            nextButton.setTitleColor(.black, for: .normal)
+            nextButton.backgroundColor = UIColor(rgb: 0x3D9EA0)
+            nextButton.setTitleColor(.white, for: .normal)
         } else {
             nextButton.backgroundColor = UIColor(rgb: 0xEBEBEB)
             nextButton.setTitleColor(.lightGray, for: .normal)

@@ -12,6 +12,14 @@ class PageFourViewController: UIViewController {
     @IBOutlet weak var cb2: CheckBox!
     @IBOutlet weak var cb3: CheckBox!
     @IBOutlet weak var cb4: CheckBox!
+    
+    @IBOutlet weak var nextButton: UIButton! {
+        didSet {
+            nextButton.backgroundColor = UIColor(rgb: 0x3D9EA0)
+            nextButton.setTitleColor(.white, for: .normal)
+        }
+    }
+    
     @IBAction func onCb1Checked(_ sender: Any) {
         cb1.isChecked = true
         cb2.isChecked = false

@@ -15,7 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-      
+
+        UILabel.appearance().substituteFontName = "Montserrat"; // USE YOUR FONT NAME INSTEAD
+        UITextView.appearance().substituteFontName = "Montserrat"; // USE YOUR FONT NAME INSTEAD
+        UITextField.appearance().substituteFontName = "Montserrat";
+        
         return true
     }
 

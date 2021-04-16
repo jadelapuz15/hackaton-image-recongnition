@@ -11,8 +11,14 @@ class PageThreeViewController: UIViewController {
     
     var car: Car!
     
+    @IBOutlet weak var nextButton: UIButton! {
+        didSet {
+            nextButton.backgroundColor = UIColor(rgb: 0x3D9EA0)
+            nextButton.setTitleColor(.white, for: .normal)
+        }
+    }
+    
     @IBOutlet weak var cb1: CheckBox!
-    @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var cb2: CheckBox!
     
     @IBAction func onCb1Checked(_ sender: Any) {

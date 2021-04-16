@@ -43,13 +43,13 @@ open class CheckBox: UIControl {
     var checkmarkSize: CGFloat = 0.5
     
     @IBInspectable
-    var uncheckedBorderColor: UIColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+    var uncheckedBorderColor: UIColor = #colorLiteral(red: 0.2880065441, green: 0.6771222353, blue: 0.6892323494, alpha: 1)
     
     @IBInspectable
-    var checkedBorderColor: UIColor = #colorLiteral(red: 0, green: 0.3285208941, blue: 0.5748849511, alpha: 1)
+    var checkedBorderColor: UIColor = #colorLiteral(red: 0.2880065441, green: 0.6771222353, blue: 0.6892323494, alpha: 1)
     
     @IBInspectable
-    var checkmarkColor: UIColor = #colorLiteral(red: 0, green: 0.3285208941, blue: 0.5748849511, alpha: 1)
+    var checkmarkColor: UIColor = #colorLiteral(red: 0.2880065441, green: 0.6771222353, blue: 0.6892323494, alpha: 1)
     
     var checkboxBackgroundColor: UIColor! = .white
     
