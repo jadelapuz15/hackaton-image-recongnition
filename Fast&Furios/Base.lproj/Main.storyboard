@@ -621,6 +621,7 @@
                     <navigationItem key="navigationItem" id="IsX-AP-5x3"/>
                     <connections>
                         <outlet property="nextButton" destination="Og1-uA-ask" id="h2q-r0-6jA"/>
+                        <outlet property="textField" destination="PlY-bh-NSo" id="CGg-u5-E5X"/>
                         <segue destination="jNc-aN-fbK" kind="show" identifier="showPageSix" id="uIB-Ie-aOe"/>
                     </connections>
                 </viewController>
@@ -808,7 +809,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FwE-gx-7tN">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FwE-gx-7tN">
                                 <rect key="frame" x="16" y="144" width="382" height="133"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -825,13 +826,13 @@
                                     <action selector="onRequestQuoteClicked:" destination="jNc-aN-fbK" eventType="touchUpInside" id="kog-B1-Aj9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="You can also add photos to explain the situation." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cT-df-l40">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can also add photos to explain the situation." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cT-df-l40">
                                 <rect key="frame" x="16" y="293" width="382" height="48"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sWy-Uy-APM">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sWy-Uy-APM">
                                 <rect key="frame" x="16" y="357" width="382" height="130"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shd-7D-0MK">
@@ -880,6 +881,7 @@
                             <constraint firstItem="sLW-M2-lBT" firstAttribute="trailing" secondItem="FwE-gx-7tN" secondAttribute="trailing" constant="16" id="Ski-pJ-T76"/>
                             <constraint firstItem="FwE-gx-7tN" firstAttribute="top" secondItem="3Wf-9n-Zgo" secondAttribute="bottom" constant="16" id="WFK-WA-dXb"/>
                             <constraint firstItem="Nks-lG-PDv" firstAttribute="bottom" secondItem="5Gb-9o-5ho" secondAttribute="bottom" id="Zm0-9q-SyL"/>
+                            <constraint firstItem="Nks-lG-PDv" firstAttribute="top" secondItem="sWy-Uy-APM" secondAttribute="bottom" constant="329" id="bCT-OS-Fcd"/>
                             <constraint firstItem="dPc-6M-7rg" firstAttribute="leading" secondItem="sLW-M2-lBT" secondAttribute="leading" id="cBF-ng-6ZO"/>
                             <constraint firstItem="9cT-df-l40" firstAttribute="top" secondItem="FwE-gx-7tN" secondAttribute="bottom" constant="16" id="dcz-zb-8kI"/>
                             <constraint firstItem="sLW-M2-lBT" firstAttribute="trailing" secondItem="3Wf-9n-Zgo" secondAttribute="trailing" constant="16" id="fK4-5A-RW8"/>
@@ -896,6 +898,7 @@
                         <outlet property="secondImage" destination="eKK-wI-K38" id="Kyg-kD-i0F"/>
                         <outlet property="stackView" destination="sWy-Uy-APM" id="7yZ-qv-zew"/>
                         <outlet property="textField" destination="FwE-gx-7tN" id="eGE-kt-rvJ"/>
+                        <outlet property="textView" destination="FwE-gx-7tN" id="bxt-nf-4Cm"/>
                         <outlet property="thirdImage" destination="hNe-6g-Uxr" id="KS7-mg-aTN"/>
                     </connections>
                 </viewController>

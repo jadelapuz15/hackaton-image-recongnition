@@ -8,7 +8,9 @@
 import UIKit
 
 class PageFiveViewController: UIViewController {
-
+    
+    @IBOutlet weak var textField: UITextField!
+    
     @IBOutlet weak var nextButton: UIButton! {
         didSet {
             nextButton.backgroundColor = UIColor(rgb: 0x3D9EA0)
@@ -19,22 +21,30 @@ class PageFiveViewController: UIViewController {
     @IBAction func onNextClicked(_ sender: Any) {
         self.performSegue(withIdentifier: "showPageSix", sender: nil)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "oneflare-ic"))
-
+        addDoneButtonOnKeyboard()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func addDoneButtonOnKeyboard(){
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        doneToolbar.barStyle = .default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        
+        let items = [flexSpace, done]
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        textField.inputAccessoryView = doneToolbar
     }
-    */
-
+    
+    @objc func doneButtonAction(){
+        textField.resignFirstResponder()
+    }
+    
 }

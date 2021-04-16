@@ -9,6 +9,8 @@ import UIKit
 
 class PageSixViewController: UIViewController, UINavigationControllerDelegate {
 
+    @IBOutlet weak var textView: UITextView!
+    
     @IBOutlet weak var nextButton: UIButton! {
         didSet {
             nextButton.backgroundColor = UIColor(rgb: 0x3D9EA0)
@@ -35,6 +37,24 @@ class PageSixViewController: UIViewController, UINavigationControllerDelegate {
         }
     }
     
+    func addDoneButtonOnKeyboard(){
+        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        doneToolbar.barStyle = .default
+        
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+        
+        let items = [flexSpace, done]
+        doneToolbar.items = items
+        doneToolbar.sizeToFit()
+        
+        textView.inputAccessoryView = doneToolbar
+    }
+    
+    @objc func doneButtonAction(){
+        textView.resignFirstResponder()
+    }
+    
     @IBAction func addPhoto(_ sender: UIButton) {
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { _ in
@@ -57,7 +77,7 @@ class PageSixViewController: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addDoneButtonOnKeyboard()
         self.navigationItem.titleView = UIImageView(image: UIImage(named: "oneflare-ic"))
         textField.layer.borderWidth = 1.0;
         textField.layer.cornerRadius = 8.0;
