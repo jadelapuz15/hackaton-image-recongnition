@@ -49,6 +49,9 @@ class CarParser: NSObject {
             if stringResponse.contains("Australian Lookup failed") {
                 let error = NSError(domain: url.description, code: 400, userInfo: [NSLocalizedDescriptionKey: "No information found for license plate: \(plateNumber)"])
                 completion(nil, error)
+            } else if stringResponse.contains("Error reading JArray from JsonReader") {
+                let error = NSError(domain: url.description, code: 400, userInfo: [NSLocalizedDescriptionKey: "Something went wrong with the server or the information you are looking for is not available for license plate: \(plateNumber)"])
+                completion(nil, error)
             }
             
             let parser = XMLParser(data: data)
