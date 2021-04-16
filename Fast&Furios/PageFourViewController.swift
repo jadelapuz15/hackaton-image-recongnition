@@ -42,6 +42,7 @@ class PageFourViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "oneflare-ic"))
         cb1.borderStyle = .rounded
         cb2.borderStyle = .rounded
         cb3.borderStyle = .rounded

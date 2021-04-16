@@ -56,6 +56,7 @@ class PageOneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "oneflare-ic"))
         cb1.style = .tick
         cb2.style = .tick
         cb3.style = .tick

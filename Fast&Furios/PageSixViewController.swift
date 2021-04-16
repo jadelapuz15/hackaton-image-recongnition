@@ -50,7 +50,8 @@ class PageSixViewController: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "oneflare-ic"))
         textField.layer.borderWidth = 1.0;
         textField.layer.cornerRadius = 8.0;
         textField.layer.borderColor = UIColor.lightGray.cgColor;

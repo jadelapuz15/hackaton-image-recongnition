@@ -25,6 +25,7 @@ class VehicleStateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         selectStateTextField.delegate = self
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "oneflare-ic"))
         // Do any additional setup after loading the view.
     }
     

@@ -32,7 +32,8 @@ class PageThreeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "oneflare-ic"))
         cb1.style = .circle
         cb2.style = .circle
         cb1.borderStyle = .rounded

@@ -94,6 +94,7 @@ class PlateNumberViewController: UIViewController, UINavigationControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "oneflare-ic"))
         licensePlateTextField.addTarget(self, action: #selector(PlateNumberViewController.textFieldDidChange(_:)), for: .editingChanged)
     }
     
