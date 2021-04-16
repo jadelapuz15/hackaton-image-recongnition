@@ -35,6 +35,7 @@ class PageOneViewController: UIViewController {
         cb4.isChecked = false
         cb5.isChecked = false
     }
+    
     @IBAction func onCb4Checked(_ sender: Any) {
         cb1.isChecked = false
         cb2.isChecked = false
@@ -42,6 +43,7 @@ class PageOneViewController: UIViewController {
         cb4.isChecked = true
         cb5.isChecked = false
     }
+    
     @IBAction func onCb5Checked(_ sender: Any) {
         cb1.isChecked = false
         cb2.isChecked = false
@@ -49,10 +51,19 @@ class PageOneViewController: UIViewController {
         cb4.isChecked = false
         cb5.isChecked = true
     }
+    
     @IBAction func onNextClicked(_ sender: Any) {
         
         self.performSegue(withIdentifier: "showStateView", sender: nil)
     }
+    
+    @IBOutlet weak var nextButton: UIButton! {
+        didSet {
+            nextButton.backgroundColor = UIColor(rgb: 0x3D9EA0)
+            nextButton.setTitleColor(.white, for: .normal)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
